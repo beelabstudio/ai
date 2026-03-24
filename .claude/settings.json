@@ -18,6 +18,7 @@
       "npm run typecheck"
     ]
   },
+  "agent": "orchestrator",
   "model": "claude-opus",
   "theme": "system"
 }
