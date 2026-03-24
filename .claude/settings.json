@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "npm install",
+      "npm run *",
+      "git *",
+      "gh *"
+    ],
+    "deny": [
+      "npm publish",
+      "git push --force",
+      "git push -f"
+    ]
+  },
+  "hooks": {
+    "pre-commit": [
+      "npm run lint",
+      "npm run typecheck"
+    ]
+  },
+  "model": "claude-opus",
+  "theme": "system"
+}
