@@ -10,12 +10,33 @@ Central repository for **community health files**, templates, and quality standa
 
 ```
 .github/
-└── PULL_REQUEST_TEMPLATE.md        # Generic Pull Request template
+├── PULL_REQUEST_TEMPLATE.md        # Generic Pull Request template
+└── copilot-instructions.md         # GitHub Copilot instructions
+.claude/                            # Claude Code configuration
+├── agents/                         # Subagent personas
+│   ├── orchestrator.md             # Central coordinator
+│   ├── code-reviewer.md            # Code quality reviewer
+│   └── security-auditor.md         # Security auditor
+├── commands/                       # Slash commands
+│   ├── review.md                   # → /project:review
+│   ├── fix-issue.md                # → /project:fix-issue
+│   └── deploy.md                   # → /project:deploy
+├── rules/                          # Modular instruction files
+│   ├── code-style.md               # Naming and formatting standards
+│   ├── testing.md                  # Test requirements
+│   └── api-conventions.md          # REST API standards
+├── skills/                         # Auto-invoked skills
+│   ├── orchestrator/SKILL.md       # Coordination skill
+│   ├── security-review/SKILL.md    # Security checks
+│   └── deploy/SKILL.md             # Deployment guidance
+└── settings.json                   # Shared configuration
 skills/
 ├── domain/                         # Domain-specific AI skills
 ├── enabling/                       # Enabling / cross-cutting AI skills
 ├── foundation/                     # Foundation engineering role skills
 └── process/                        # Workflow and process skills
+CLAUDE.md                           # Team instructions for Claude
+CLAUDE.local.md                     # Personal overrides (gitignored)
 ```
 
 ## 📋 Pull Request Template
@@ -40,6 +61,26 @@ The `skills/` directory contains reusable AI skill definitions (`SKILL.md` files
 | `foundation/` | Core engineering roles (software engineer, QA, DBA, PM…) |
 | `process/` | Workflow and process skills (git, business analysis, fiscal…) |
 
+## 🤖 Using with AI Assistants
+
+### GitHub Copilot
+
+Copy `.github/copilot-instructions.md` to your project or reference skills from this repository.
+
+### Claude Code
+
+This repository includes a complete `.claude/` setup:
+
+1. **Copy the structure** to your project:
+   ```bash
+   cp -r ~/repos/.github/.claude ./
+   cp ~/repos/.github/CLAUDE.md ./
+   ```
+
+2. **Customize** `CLAUDE.md` with your project description
+
+3. **Use the Orchestrator** for any complex task - it will route to the right resources
+
 ### Setup
 
 Clone this repository to use shared skills locally:
@@ -48,10 +89,14 @@ Clone this repository to use shared skills locally:
 git clone git@github.com:beelabstudio/.github.git ~/repos/.github
 ```
 
-Then reference skills from your project's `copilot-instructions.md` using the path:
+Then reference skills from your project's AI configuration:
+
+**For Copilot** (`copilot-instructions.md`):
 ```
 ~/repos/.github/skills/<category>/<skill-name>/SKILL.md
 ```
+
+**For Claude Code** (copy and adapt from `.claude/` folder)
 
 ## 🏗️ Default project stack
 

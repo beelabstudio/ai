@@ -42,4 +42,12 @@ This file contains shared instructions that apply to all team members working wi
 ## Links
 
 - [Repository README](./README.md)
+- [Skills Index](./INDEX.md) - Complete resource catalog
 - [Contributing Guidelines](./CONTRIBUTING.md)
+
+## Multi-Assistant Support
+
+This project is configured for both **Claude Code** and **GitHub Copilot**:
+- Claude uses `.claude/` folder and `CLAUDE.md`
+- Copilot uses `.github/copilot-instructions.md`
+- Shared skills are in `skills/` folder
