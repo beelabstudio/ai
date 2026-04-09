@@ -11,49 +11,11 @@ This is the central repository for BEELABSTUDIO organization standards, containi
 
 ## Available Resources
 
-### AI Skills (for reference and inclusion)
+### AI Skills
 
-Reference these skills when they match the user's context:
+The complete and up-to-date skills catalog is the single source of truth:
 
-**C-Level Skills** (`skills/c-level/`)
-- `ceo`: Strategic trade-offs and executive decision-making
-- `cfo`: Financial governance and unit economics
-- `ciso`: Security posture, risk governance and compliance
-- `coo`: Operational governance and scaling
-- `cpo`: Product vision and roadmap prioritisation
-- `cto`: Technology strategy and architecture decisions
-
-**Domain Skills** (`skills/domain/`)
-- `dbt-specialist`: DBT modeling and data transformation
-- `github-copilot-agent-engineer`: Copilot agent development and customization
-- `legacy-system-migration-specialist`: Migration planning and execution
-- `mysql-specialist`: MySQL optimization and management
-- `nutricionista-clinica`: Clinical nutrition domain knowledge
-
-**Enabling Skills** (`skills/enabling/`)
-- `devops-engineer`: Infrastructure and deployment
-- `documentation-writer`: Technical documentation standards
-- `especialista-seo-saude`: SEO for health/wellness
-- `especialista-ux-ui-saude`: UX/UI for health applications
-- `integration-specialist`: System integration patterns
-- `project-orchestrator`: Project coordination
-- `research-synthesis`: Research analysis
-- `ux-ui-designer`: General UX/UI design
-
-**Foundation Skills** (`skills/foundation/`)
-- `data-engineer`: Data engineering practices
-- `dba`: Database administration
-- `product-manager`: Product management
-- `qa-engineer`: Quality assurance
-- `software-architect`: Architecture decisions
-- `software-engineer`: Development standards
-
-**Process Skills** (`skills/process/`)
-- `business-analyst`: Business analysis
-- `fiscal-consultant`: Fiscal/compliance matters
-- `gdpr-privacy-specialist`: Privacy and GDPR compliance
-- `git-workflow-coordinator`: Git and GitHub workflow
-- `skill-coordinator`: AI skill management
+#file:INDEX.md
 
 ### Claude Code Integration
 

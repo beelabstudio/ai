@@ -39,10 +39,15 @@ This file contains shared instructions that apply to all team members working wi
 | Deploy Skill | `.claude/skills/deploy/SKILL.md` | Auto deployment guidance |
 | Orchestrator Skill | `.claude/skills/orchestrator/SKILL.md` | Auto coordination |
 
+## Skills Catalog
+
+The complete and up-to-date skills catalog is the single source of truth — always read it before suggesting or using any skill:
+
+@INDEX.md
+
 ## Links
 
 - [Repository README](./README.md)
-- [Skills Index](./INDEX.md) - Complete resource catalog
 - [Contributing Guidelines](./CONTRIBUTING.md)
 
 ## Multi-Assistant Support
