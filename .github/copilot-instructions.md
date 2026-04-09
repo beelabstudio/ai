@@ -15,8 +15,17 @@ This is the central repository for BEELABSTUDIO organization standards, containi
 
 Reference these skills when they match the user's context:
 
+**C-Level Skills** (`skills/c-level/`)
+- `ceo`: Strategic trade-offs and executive decision-making
+- `cfo`: Financial governance and unit economics
+- `ciso`: Security posture, risk governance and compliance
+- `coo`: Operational governance and scaling
+- `cpo`: Product vision and roadmap prioritisation
+- `cto`: Technology strategy and architecture decisions
+
 **Domain Skills** (`skills/domain/`)
 - `dbt-specialist`: DBT modeling and data transformation
+- `github-copilot-agent-engineer`: Copilot agent development and customization
 - `legacy-system-migration-specialist`: Migration planning and execution
 - `mysql-specialist`: MySQL optimization and management
 - `nutricionista-clinica`: Clinical nutrition domain knowledge
