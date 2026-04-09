@@ -75,7 +75,7 @@ Complete reference of all AI skills and resources available in this repository.
 
 | Agent | File | Use When |
 |-------|------|----------|
-| Orchestrator | `.claude/agents/orchestrator.md` | Any complex or unclear request |
+| Orchestrator | `.claude/agents/orchestrator.md` | Any complex or unclear request; auto-invokes security/deploy checks |
 | Code Reviewer | `.claude/agents/code-reviewer.md` | Code quality review |
 | Security Auditor | `.claude/agents/security-auditor.md` | Security assessment |
 
@@ -94,14 +94,6 @@ Complete reference of all AI skills and resources available in this repository.
 | Code Style | `.claude/rules/code-style.md` | Naming, formatting, TypeScript |
 | Testing | `.claude/rules/testing.md` | Test structure, coverage |
 | API Conventions | `.claude/rules/api-conventions.md` | REST standards, versioning |
-
-### Skills (Auto-invoked)
-
-| Skill | File | Triggers On |
-|-------|------|-------------|
-| Orchestrator | `.claude/skills/orchestrator/SKILL.md` | Generic/complex requests |
-| Security Review | `.claude/skills/security-review/SKILL.md` | Security-sensitive code |
-| Deploy | `.claude/skills/deploy/SKILL.md` | Deployment context |
 
 ## Usage Patterns
 

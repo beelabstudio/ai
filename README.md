@@ -13,7 +13,7 @@ Central repository for **community health files**, templates, and quality standa
 ├── PULL_REQUEST_TEMPLATE.md        # Generic Pull Request template
 └── copilot-instructions.md         # GitHub Copilot instructions
 .claude/                            # Claude Code configuration
-├── agents/                         # Subagent personas
+├── agents/                         # Subagent personas + auto-invocation triggers
 │   ├── orchestrator.md             # Central coordinator
 │   ├── code-reviewer.md            # Code quality reviewer
 │   └── security-auditor.md         # Security auditor
@@ -25,10 +25,6 @@ Central repository for **community health files**, templates, and quality standa
 │   ├── code-style.md               # Naming and formatting standards
 │   ├── testing.md                  # Test requirements
 │   └── api-conventions.md          # REST API standards
-├── skills/                         # Auto-invoked skills
-│   ├── orchestrator/SKILL.md       # Coordination skill
-│   ├── security-review/SKILL.md    # Security checks
-│   └── deploy/SKILL.md             # Deployment guidance
 └── settings.json                   # Shared configuration
 skills/
 ├── c-level/                        # Executive leadership AI skills

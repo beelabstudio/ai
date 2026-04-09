@@ -26,7 +26,7 @@ This file contains shared instructions that apply to all team members working wi
 
 | Resource | Location | Purpose |
 |----------|----------|---------|
-| Orchestrator Agent | `.claude/agents/orchestrator.md` | Central coordinator for all requests |
+| Orchestrator Agent | `.claude/agents/orchestrator.md` | Central coordinator — routing, auto-invocation triggers |
 | Code Reviewer | `.claude/agents/code-reviewer.md` | Quality-focused code review |
 | Security Auditor | `.claude/agents/security-auditor.md` | Security vulnerability assessment |
 | Review Command | `.claude/commands/review.md` | Pre-PR review checklist |
@@ -35,9 +35,6 @@ This file contains shared instructions that apply to all team members working wi
 | Code Style Rules | `.claude/rules/code-style.md` | Naming and formatting standards |
 | Testing Rules | `.claude/rules/testing.md` | Test coverage requirements |
 | API Conventions | `.claude/rules/api-conventions.md` | REST API standards |
-| Security Review | `.claude/skills/security-review/SKILL.md` | Auto security checks |
-| Deploy Skill | `.claude/skills/deploy/SKILL.md` | Auto deployment guidance |
-| Orchestrator Skill | `.claude/skills/orchestrator/SKILL.md` | Auto coordination |
 
 ## Skills Catalog
 

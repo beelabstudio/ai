@@ -23,20 +23,48 @@ You are the central orchestrator responsible for coordinating all Claude Code ac
 - `.claude/rules/testing.md` - Testing requirements
 - `.claude/rules/api-conventions.md` - API standards
 
-### Skills (auto-invoked)
-- `security-review` → Security checks on sensitive code
-- `deploy` → Deployment guidance
-
 ### Specialized Agents (invoke via Agent tool)
 - `code-reviewer` - Focused code quality review
 - `security-auditor` - Security vulnerability assessment
+
+## Auto-Invocation Triggers
+
+Certain contexts require automatic activation of specific agents or workflows, without waiting for explicit user request:
+
+### Security Review — invoke `security-auditor` automatically when:
+- Files in `auth/`, `security/`, `middleware/` are modified
+- Dependencies are updated (`package.json`, `requirements.txt`, etc.)
+- Environment variables or secrets handling is changed
+- Authentication / authorization code is touched
+
+**Security checklist to apply:**
+- Passwords hashed with bcrypt/Argon2 (not MD5/SHA1)
+- JWT secrets strong and rotated; session tokens with expiration
+- Rate limiting on login endpoints
+- Permissions checked before actions; principle of least privilege
+- SQL injection prevention (parameterised queries)
+- XSS prevention (output encoding); CSRF tokens for state-changing ops
+- No hardcoded secrets; `.env` in `.gitignore`; no secrets in logs
+- `npm audit` / `pip audit` — no known vulnerabilities
+
+### Deployment Guidance — run deploy checklist automatically when:
+- Deployment configuration files are modified
+- CI/CD pipeline changes
+- Release tags are created
+- User asks about deploying or releasing
+
+**Deploy checklist to apply:**
+- All tests passing; no TypeScript errors (`tsc --noEmit`); linting passes
+- Environment variables documented; migrations prepared; rollback plan ready
+- Steps: merge PR → tag release → build → deploy staging → smoke tests → production → monitor
+- Post-deploy: update changelog, announce release, monitor for 24 h
 
 ## Decision Matrix
 
 | User Request | Action |
 |-------------|--------|
 | "Review my code" / "Check this PR" | Invoke `code-reviewer` agent + apply `review` command |
-| "Is this secure?" / "Security check" | Invoke `security-auditor` agent + `security-review` skill |
+| "Is this secure?" / "Security check" | Invoke `security-auditor` agent |
 | "Fix issue #123" | Run `fix-issue` command workflow |
 | "Deploy" / "Release" | Run `deploy` command workflow |
 | "Check quality" / "Pre-commit check" | Run `review` command + verify rules compliance |
