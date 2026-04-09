@@ -14,11 +14,23 @@ Complete reference of all AI skills and resources available in this repository.
 
 ## Shared Skills Catalog
 
+### C-Level Skills
+
+| Skill | Path | Description |
+|-------|------|-------------|
+| CEO | `skills/c-level/ceo/SKILL.md` | Strategic trade-offs and executive decision-making |
+| CFO | `skills/c-level/cfo/SKILL.md` | Financial governance and unit economics |
+| CISO | `skills/c-level/ciso/SKILL.md` | Security posture, risk governance and compliance |
+| COO | `skills/c-level/coo/SKILL.md` | Operational governance and scaling |
+| CPO | `skills/c-level/cpo/SKILL.md` | Product vision and roadmap prioritisation |
+| CTO | `skills/c-level/cto/SKILL.md` | Technology strategy and architecture decisions |
+
 ### Domain Skills
 
 | Skill | Path | Description |
 |-------|------|-------------|
 | DBT Specialist | `skills/domain/dbt-specialist/SKILL.md` | Data transformation with DBT |
+| GitHub Copilot Agent Engineer | `skills/domain/github-copilot-agent-engineer/SKILL.md` | Copilot agent development and customization |
 | Legacy Migration | `skills/domain/legacy-system-migration-specialist/SKILL.md` | System migration planning |
 | MySQL Specialist | `skills/domain/mysql-specialist/SKILL.md` | MySQL optimization |
 | Clinical Nutrition | `skills/domain/nutricionista-clinica/SKILL.md` | Nutrition domain knowledge |

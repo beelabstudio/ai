@@ -31,6 +31,7 @@ Central repository for **community health files**, templates, and quality standa
 │   └── deploy/SKILL.md             # Deployment guidance
 └── settings.json                   # Shared configuration
 skills/
+├── c-level/                        # Executive leadership AI skills
 ├── domain/                         # Domain-specific AI skills
 ├── enabling/                       # Enabling / cross-cutting AI skills
 ├── foundation/                     # Foundation engineering role skills
@@ -56,6 +57,7 @@ The `skills/` directory contains reusable AI skill definitions (`SKILL.md` files
 
 | Category | Description |
 |----------|-------------|
+| `c-level/` | Executive leadership skills (CEO, CTO, CFO, CPO, COO, CISO) |
 | `domain/` | Specialised domain knowledge (nutrition, databases, migrations…) |
 | `enabling/` | Cross-cutting capabilities (SEO, UX/UI, integrations, research…) |
 | `foundation/` | Core engineering roles (software engineer, QA, DBA, PM…) |
