@@ -1,3 +1,8 @@
+---
+name: integration-specialist
+description: Use when integrating third-party SaaS tools, payment systems, scheduling, webhooks, or external APIs without a dedicated backend.
+---
+
 # Integration Specialist — SaaS & Third-Party Tools
 
 ## Description

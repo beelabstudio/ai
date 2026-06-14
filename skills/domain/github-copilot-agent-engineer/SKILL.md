@@ -1,3 +1,8 @@
+---
+name: github-copilot-agent-engineer
+description: Use when creating or configuring AI agents, Copilot extensions, or optimising AI-assisted development workflows.
+---
+
 # GitHub Copilot Agent Engineer
 
 ## Description

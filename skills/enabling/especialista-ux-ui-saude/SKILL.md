@@ -1,3 +1,8 @@
+---
+name: especialista-ux-ui-saude
+description: Use when designing UX/UI for health and wellness platforms, including conversion optimisation and health-specific design patterns.
+---
+
 # UX/UI Specialist — Health & Wellness
 
 ## Description

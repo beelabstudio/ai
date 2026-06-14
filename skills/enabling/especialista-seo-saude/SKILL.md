@@ -1,3 +1,8 @@
+---
+name: especialista-seo-saude
+description: Use when working on SEO for health professional websites targeting Portugal, including keyword research and Google E-E-A-T optimisation.
+---
+
 # SEO Specialist — Health Professionals (Portugal)
 
 ## Description

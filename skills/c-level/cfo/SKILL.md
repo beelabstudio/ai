@@ -1,3 +1,8 @@
+---
+name: cfo
+description: Use for unit economics, pricing changes, billing architecture, payment gateway selection, or fiscal and tax compliance decisions.
+---
+
 # CFO — Chief Financial Officer
 
 ## Description

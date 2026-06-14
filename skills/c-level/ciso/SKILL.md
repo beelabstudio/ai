@@ -1,3 +1,8 @@
+---
+name: ciso
+description: Use for security vulnerabilities, auth or RBAC design, GDPR/LGPD compliance, data breaches, or any new data collection decisions.
+---
+
 # CISO — Chief Information Security Officer
 
 ## Description

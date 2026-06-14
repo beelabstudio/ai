@@ -1,3 +1,8 @@
+---
+name: gdpr-privacy-specialist
+description: Use when handling personal data, designing consent flows, writing privacy policies, or ensuring GDPR/CNPD compliance.
+---
+
 # Skill: GDPR & Privacy Compliance Specialist
 
 ## Role

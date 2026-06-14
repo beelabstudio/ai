@@ -1,3 +1,8 @@
+---
+name: cto
+description: Use for architecture decisions, ADR creation, stack evaluation, tech debt trade-offs, or engineering process changes.
+---
+
 # CTO — Chief Technology Officer
 
 ## Description

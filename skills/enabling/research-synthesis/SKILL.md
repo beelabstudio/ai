@@ -1,3 +1,8 @@
+---
+name: research-synthesis
+description: Use when conducting in-depth research, consolidating information from multiple sources, or supporting data-driven strategic decisions.
+---
+
 # Research Synthesis
 
 ## Description
