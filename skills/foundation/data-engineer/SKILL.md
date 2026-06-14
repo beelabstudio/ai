@@ -1,3 +1,8 @@
+---
+name: data-engineer
+description: Use when designing data pipelines, ETL/ELT processes, data warehouses, or data lake architectures.
+---
+
 # Data Engineer
 
 ## Description

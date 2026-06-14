@@ -1,3 +1,8 @@
+---
+name: dba
+description: Use when designing database schemas, optimising queries, managing migrations, or ensuring database availability and integrity.
+---
+
 # DBA (Database Administrator)
 
 ## Description

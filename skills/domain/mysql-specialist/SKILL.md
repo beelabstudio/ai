@@ -1,3 +1,8 @@
+---
+name: mysql-specialist
+description: Use when administering, optimising, or troubleshooting MySQL or MariaDB databases in production.
+---
+
 # MySQL Specialist
 
 ## Description

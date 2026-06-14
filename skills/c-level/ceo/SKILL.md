@@ -1,3 +1,8 @@
+---
+name: ceo
+description: Use for company-level strategic decisions, market entry, OKRs, fundraising, build-vs-buy, or cross-functional trade-offs that no single domain can resolve.
+---
+
 # CEO — Chief Executive Officer
 
 ## Description

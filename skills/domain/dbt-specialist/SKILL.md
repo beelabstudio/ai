@@ -1,3 +1,8 @@
+---
+name: dbt-specialist
+description: Use when working with dbt data transformation pipelines, analytics engineering, or dimensional modeling.
+---
+
 # DBT Specialist
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: coo
+description: Use for onboarding flows, support SLA definition, operational readiness, process design, or vendor evaluation.
+---
+
 # COO — Chief Operating Officer
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: project-orchestrator
+description: Use when coordinating multiple simultaneous projects, managing cross-team dependencies, or aligning objectives across teams.
+---
+
 # Project Orchestrator
 
 ## Description

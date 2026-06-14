@@ -1,3 +1,8 @@
+---
+name: business-analyst
+description: Use when gathering requirements, modelling business processes, mapping user flows, or bridging business and technical needs.
+---
+
 # Business Analyst
 
 ## Description

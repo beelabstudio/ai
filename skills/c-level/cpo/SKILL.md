@@ -1,3 +1,8 @@
+---
+name: cpo
+description: Use for roadmap sequencing, feature scope decisions, North Star metric, design quality bar, or cross-module prioritisation conflicts.
+---
+
 # CPO — Chief Product Officer
 
 ## Description

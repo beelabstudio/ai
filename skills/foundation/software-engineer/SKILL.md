@@ -1,3 +1,8 @@
+---
+name: software-engineer
+description: Use when implementing features, debugging, refactoring code, reviewing PRs, or following engineering best practices.
+---
+
 # Software Engineer
 
 ## Description

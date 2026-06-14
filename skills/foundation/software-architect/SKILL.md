@@ -1,3 +1,8 @@
+---
+name: software-architect
+description: Use before any significant new feature or module — validate stack, write ADRs, and review architectural decisions.
+---
+
 # Software Architect
 
 ## Description

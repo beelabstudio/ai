@@ -1,3 +1,8 @@
+---
+name: devops-engineer
+description: Use when designing CI/CD pipelines, managing infrastructure as code, or configuring containerised environments.
+---
+
 # DevOps Engineer
 
 ## Description

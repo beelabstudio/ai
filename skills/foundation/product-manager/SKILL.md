@@ -1,3 +1,8 @@
+---
+name: product-manager
+description: Use when defining product vision, prioritising backlogs, planning sprints, or aligning stakeholders.
+---
+
 # Product Manager
 
 ## Description

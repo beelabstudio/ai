@@ -1,3 +1,8 @@
+---
+name: git-workflow-coordinator
+description: Use when setting up branching strategies, PR workflows, release management, or enforcing git conventions.
+---
+
 # Git Workflow Coordinator
 
 ## Description

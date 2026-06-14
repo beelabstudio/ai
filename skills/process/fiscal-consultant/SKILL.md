@@ -1,3 +1,8 @@
+---
+name: fiscal-consultant
+description: Use when reviewing tax regulations, fiscal compliance requirements, or validating financial calculations in systems.
+---
+
 # Fiscal Consultant
 
 ## Description

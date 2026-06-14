@@ -1,3 +1,8 @@
+---
+name: skill-coordinator
+description: Use when orchestrating multiple AI skills for complex tasks that require coordination across several domains.
+---
+
 # Skill Coordinator
 
 ## Description

@@ -1,3 +1,8 @@
+---
+name: legacy-system-migration-specialist
+description: Use when planning or executing legacy system modernisation, migration strategies, or strangler fig patterns.
+---
+
 # Legacy System Migration Specialist
 
 ## Description

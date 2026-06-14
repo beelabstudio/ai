@@ -1,3 +1,8 @@
+---
+name: ux-ui-designer
+description: Use before coding any screen — wireframes, design system, accessibility standards, component specs, and developer handoff.
+---
+
 # UX/UI Designer
 
 ## Description

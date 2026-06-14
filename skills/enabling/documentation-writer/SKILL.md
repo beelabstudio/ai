@@ -1,3 +1,8 @@
+---
+name: documentation-writer
+description: Use when creating or updating technical documentation, API docs, README files, or user guides.
+---
+
 # Documentation Writer
 
 ## Description

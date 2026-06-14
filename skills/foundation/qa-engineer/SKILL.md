@@ -1,3 +1,8 @@
+---
+name: qa-engineer
+description: Use when defining test strategies, writing test plans, automating validation, or establishing quality standards.
+---
+
 # QA Engineer
 
 ## Description

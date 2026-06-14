@@ -1,3 +1,8 @@
+---
+name: nutricionista-clinica
+description: Use when validating nutrition, dietary, or clinical content against Portuguese and European healthcare standards.
+---
+
 # Clinical Nutritionist
 
 ## Description
