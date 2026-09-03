@@ -46,6 +46,7 @@ Complete reference of all AI skills and resources available in this repository.
 | Integration Specialist | `skills/enabling/integration-specialist/SKILL.md` | System integration |
 | Project Orchestrator | `skills/enabling/project-orchestrator/SKILL.md` | Project coordination |
 | Research Synthesis | `skills/enabling/research-synthesis/SKILL.md` | Research analysis |
+| SEO Specialist | `skills/enabling/seo-specialist/SKILL.md` | Full-spectrum SEO — technical, JS rendering, content, migrations, local, AI search visibility |
 | UX/UI Designer | `skills/enabling/ux-ui-designer/SKILL.md` | Design standards |
 
 ### Foundation Skills
