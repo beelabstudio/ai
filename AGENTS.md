@@ -78,6 +78,14 @@ The complete and up-to-date skills catalog is the single source of truth:
 
 Types: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `perf`, `ci`
 
+### No AI Attribution
+
+- Commit messages and PR descriptions must **not** contain any AI-attribution content — no
+  `Co-Authored-By: <AI name>`, no `Generated with <AI tool>` footers, no session/task links,
+  no "🤖" markers, and no mention that the change was authored or assisted by an AI tool.
+- Commits should read as if authored by the human contributor alone.
+- If a tool defaults to adding this kind of footer, strip it before committing/opening the PR.
+
 ### Testing Requirements
 
 - Minimum 80% code coverage
@@ -95,3 +103,4 @@ When working in this repository:
 4. Ensure test coverage for every new code change
 5. Use conventional commit format for all commits
 6. Maintain English for all written artifacts without exception
+7. Do not add AI-attribution lines (Co-Authored-By, Generated with, session links, etc.) to commits or PRs
