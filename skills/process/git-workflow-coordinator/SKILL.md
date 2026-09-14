@@ -46,8 +46,8 @@ main ─────────────────────────
 
 | Prefix | When to use | Example |
 |--------|-------------|---------|
-| `feature/` | New functionality | `feature/student-belt-promotion` |
-| `fix/` | Bug fix (non-urgent) | `fix/attendance-count-wrong` |
+| `feature/` | New functionality | `feature/whatsapp-payment-reminder` |
+| `fix/` | Bug fix (non-urgent) | `fix/invoice-count-wrong` |
 | `hotfix/` | Urgent production fix | `hotfix/stripe-webhook-signature` |
 | `chore/` | Tooling, config, deps, docs | `chore/upgrade-prisma-7` |
 | `refactor/` | Code restructure, no behaviour change | `refactor/extract-notification-service` |

@@ -105,6 +105,32 @@ exports) inlined as SVG or imported as components. Never emoji glyphs
 fine in this skill file, in chat, or in an internal doc, not in client-facing
 UI.
 
+## Footer requirements (every client site)
+
+Two rules that apply regardless of visual direction, added after a real
+incident on the `mozao` site — its footer shipped with "Mozão está em fase
+de lançamento — nome e identidade visual em validação" visible to any
+visitor:
+
+1. **Never put internal project-status language in visible copy.** Things
+   like "in launch phase", "name/identity under validation", "content
+   pending", or any other note meant for the team belong in `AGENTS.md`, the
+   second brain, or a code comment — never in a `<p>` a visitor can read.
+   This kind of text is exactly the sort of thing that quietly ships to
+   production because nobody treats it as "real" copy requiring review. If a
+   fact truly isn't confirmed yet (a number, a claim, a legal status), leave
+   it out of the page rather than narrating the uncertainty to visitors.
+2. **Every site's footer must include:**
+   - **Social icons** for the channels that actually exist (WhatsApp,
+     Instagram, Facebook, etc.) as real inline SVG — never emoji. For a
+     channel that doesn't have a real profile yet, **hide that icon
+     entirely** rather than linking it to `#` or a placeholder — a dead
+     link is worse than no icon.
+   - **A copyright line + Bee Lab Studio credit**, matching the pattern
+     already used on `jp2-solucoes-construtivas`:
+     `© {year} <Client Name>. Todos os direitos reservados.` plus a
+     `Desenvolvido por Bee Lab Studio` link to `https://beelabstudio.com`.
+
 ## Relationship to other skills
 
 - `~/repos/ai/skills/enabling/seo-specialist/SKILL.md` — technical SEO,
