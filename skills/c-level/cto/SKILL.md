@@ -34,12 +34,13 @@ The CTO does not write code — it decides **what to build, how to build it at t
 | Architecture design, ADRs | `software-architect` |
 | Implementation standards, code review | `software-engineer` |
 | CI/CD, infrastructure, deployment | `devops-engineer` |
-| Security posture, auth, OWASP | `security-specialist`, CISO skill |
+| Security posture, auth, OWASP | CISO skill (delegates to the project's own security skill if it has one) |
 | Database schema, query performance | `dba` |
-| Test strategy, coverage, CI quality | `qa-strategy`, `qa-engineer` |
-| Development process and velocity | `xp-kanban-process` |
-| Mobile architecture (V1+) | `mobile-engineer` (when available) |
-| Integrations (Stripe, WhatsApp) | `integration-specialist` |
+| Test strategy, coverage, CI quality | `qa-engineer` (or the project's own QA/test-strategy skill, if it has one) |
+| Development process and velocity | `git-workflow-coordinator` (or the project's own process skill, if it has one) |
+| Third-party integrations (payments, messaging, etc.) | `integration-specialist` |
+
+> If the project has its own domain-specific skills (mobile, a bespoke QA strategy, a security specialist scoped to its stack), check its `AGENTS.md` first and prefer those over the generic rows above.
 
 ---
 
@@ -90,7 +91,7 @@ No significant architectural change ships without a merged ADR.
 - Review and approve all ADRs
 - Enforce multi-tenant isolation patterns across all modules
 - Define API contract standards (versioning, error formats, auth model)
-- Own the feature flag architecture (ADR-008 in UMatApp)
+- Own the feature flag architecture (document the decision as an ADR in the project's own `docs/adr/`)
 
 ### Engineering Quality
 - Set and enforce the Definition of Done
