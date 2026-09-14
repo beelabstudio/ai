@@ -1,6 +1,16 @@
-# BEELABSTUDIO — Organisation Standards
+# BEELABSTUDIO — AI Standards
 
-Central repository for **community health files**, templates, and quality standards across all BEELABSTUDIO projects.
+This is the repository developers actually clone and reference day to day:
+`git clone git@github.com:beelabstudio/ai.git ~/repos/ai`. Every project's
+`AGENTS.md` points here (`~/repos/ai/skills/...`).
+
+There is a **separate** repository, `beelabstudio/.github`, kept as a mirror
+of this one's content — it exists only because GitHub requires that exact
+name for org-wide defaults (the PR template that auto-applies to repos
+without their own, and Copilot's org-level fallback). Don't confuse the
+two: `ai` is the one to clone and reference; `.github` is GitHub's own
+mechanism and should stay a mirror, not a second source of truth. If you
+change something here, mirror it there too (or flag that it needs doing).
 
 ## ⚠️ Global Rule — Language
 
@@ -67,15 +77,20 @@ Copy `.github/copilot-instructions.md` to your project or reference skills from 
 
 ### Claude Code
 
-This repository includes a complete `.claude/` setup:
+New projects should start from the AGENTS.md template in the
+`beelabstudio-brain` second brain
+(`99-meta/templates/AGENTS.md`), not from a blank file — it bakes in the
+infra/git/language conventions so a fresh session doesn't have to
+rediscover them. This repo includes a complete `.claude/` setup for
+reference:
 
 1. **Copy the structure** to your project:
    ```bash
-   cp -r ~/repos/.github/.claude ./
-   cp ~/repos/.github/CLAUDE.md ./
+   cp -r ~/repos/ai/.claude ./
+   cp ~/repos/ai/AGENTS.md ./  # then adapt via the brain template above
    ```
 
-2. **Customize** `CLAUDE.md` with your project description
+2. **Customize** `AGENTS.md` with your project description
 
 3. **Use the Orchestrator** for any complex task - it will route to the right resources
 
@@ -84,14 +99,14 @@ This repository includes a complete `.claude/` setup:
 Clone this repository to use shared skills locally:
 
 ```bash
-git clone git@github.com:beelabstudio/.github.git ~/repos/.github
+git clone git@github.com:beelabstudio/ai.git ~/repos/ai
 ```
 
 Then reference skills from your project's AI configuration:
 
 **For Copilot** (`copilot-instructions.md`):
 ```
-~/repos/.github/skills/<category>/<skill-name>/SKILL.md
+~/repos/ai/skills/<category>/<skill-name>/SKILL.md
 ```
 
 **For Claude Code** (copy and adapt from `.claude/` folder)
