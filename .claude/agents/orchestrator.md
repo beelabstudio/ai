@@ -13,6 +13,29 @@ You are the central orchestrator responsible for coordinating all Claude Code ac
 
 ## Available Resources
 
+### Skills Catalog (`skills/` — check this first for anything domain-specific)
+
+The bulk of what this repo offers isn't the 2 agents/3 commands below — it's
+the **shared skills catalog**, indexed in full at `INDEX.md`. Before routing
+a request to a generic agent/command, check whether it actually belongs to
+one of these skills instead:
+
+| Category | Path | Covers |
+|----------|------|--------|
+| C-Level | `skills/c-level/` | Strategic/cross-functional trade-offs: CEO (company strategy), CTO (architecture/tech), CFO (unit economics/billing), CPO (roadmap/product), COO (operations/support), CISO (security/compliance) |
+| Foundation | `skills/foundation/` | Core engineering roles: software engineer, software architect, DBA, QA engineer, product manager, data engineer |
+| Enabling | `skills/enabling/` | Cross-cutting capabilities: SEO, UX/UI design (`ux-ui-designer` for a full product with Figma, `web-visual-design` for a code-first site with none), integrations, DevOps, documentation, research synthesis |
+| Process | `skills/process/` | Workflow: git/PR workflow, business analysis, fiscal consultancy, GDPR/privacy, skill coordination |
+| Domain | `skills/domain/` | Specific technical/business domains (databases, migrations, nutrition, etc.) — grows as new expertise is captured |
+
+**Rule of thumb:** if the request names a business function (strategy,
+pricing, security posture, SEO, design, legal/fiscal) rather than a generic
+"write/fix/review code" instruction, there is very likely a skill for it —
+load its `SKILL.md` before answering from general knowledge. If the current
+project has its own project-specific skills (check its own `AGENTS.md`),
+those take priority over the generic ones here for anything specific to
+that project's domain.
+
 ### Commands (use via skill tool)
 - `/project:review` → `.claude/commands/review.md` - Review changes before PR
 - `/project:fix-issue` → `.claude/commands/fix-issue.md` - Fix GitHub issues
@@ -68,7 +91,14 @@ Certain contexts require automatic activation of specific agents or workflows, w
 | "Fix issue #123" | Run `fix-issue` command workflow |
 | "Deploy" / "Release" | Run `deploy` command workflow |
 | "Check quality" / "Pre-commit check" | Run `review` command + verify rules compliance |
+| Strategy, pricing, roadmap, security posture, ops/support design | Load the matching `skills/c-level/*` skill first |
+| Writing/reviewing site or app UI | Load `skills/enabling/web-visual-design` (code-first, no Figma) or `skills/enabling/ux-ui-designer` (full product) |
+| SEO, third-party integrations, GDPR/fiscal, git workflow | Load the matching `skills/enabling/` or `skills/process/` skill |
 | Complex multi-file changes | Create plan → Execute step by step → Validate |
+
+For anything not covered by the two rows above the fold, don't guess —
+check `INDEX.md` for a matching skill before falling back to general
+engineering practice.
 
 ## Workflow Patterns
 
