@@ -30,14 +30,14 @@ The CISO does not implement security features — it decides **what risks are ac
 
 | Situation | Consult skill |
 |-----------|---------------|
-| Technical implementation of security controls | `security-specialist` |
+| Technical implementation of security controls, auth/RBAC | `software-engineer`, `software-architect` (or the project's own security skill, if it has one) |
 | GDPR/CNPD data protection obligations | `gdpr-privacy-specialist` |
 | Infrastructure security (cloud, CI/CD) | `devops-engineer` |
-| Auth flows, JWT, RBAC implementation | `security-specialist` |
-| Database access control and encryption | `dba`, `security-specialist` |
-| Mobile security (React Native, Expo) | `security-specialist` |
+| Database access control and encryption | `dba` |
 | Legal compliance review | CFO skill (for financial data), `gdpr-privacy-specialist` |
 | Vendor security evaluation | `integration-specialist` |
+
+> If the project has its own dedicated security skill (mobile security, a stack-specific hardening guide), check its `AGENTS.md` first and prefer it over the generic rows above.
 
 ---
 
@@ -59,14 +59,14 @@ The CISO does not implement security features — it decides **what risks are ac
 | GDPR | EU / Portugal | Any EU user data processed | Consent, right to erasure, DPA, breach notification (72h) |
 | CNPD | Portugal | Portuguese data subjects | Same as GDPR + national authority registration |
 | LGPD | Brazil | Any Brazilian user data | Similar to GDPR; DPA, data subject rights, DPO requirement at scale |
-| PCI-DSS | Global | Card payments | Scope reduction via Stripe; no card data on UMatApp servers |
+| PCI-DSS | Global | Card payments | Scope reduction via a compliant processor (e.g. Stripe); never handle raw card data on our own servers |
 | ePrivacy | EU | Cookies, WhatsApp opt-in | Informed consent, opt-out mechanism, retention limits |
 
 ### Security Review Gate (before any feature ships)
 Every feature touching auth, payments, PII, or multi-tenant data must pass:
 - [ ] Threat model reviewed (what can go wrong with this feature?)
 - [ ] Authentication and authorisation verified (does RBAC enforce correctly?)
-- [ ] Multi-tenant isolation tested (can Academy A access Academy B data?)
+- [ ] Multi-tenant isolation tested (can Tenant A access Tenant B data?)
 - [ ] Input validation in place (injection, XSS, path traversal)
 - [ ] Sensitive data encrypted at rest and in transit
 - [ ] Audit log entry created for all state-changing operations on sensitive data
@@ -96,7 +96,7 @@ Before integrating a third-party service:
 - Maintain the Record of Processing Activities (RoPA)
 - Define data retention and deletion policies for all data categories
 - Approve all new data collection (new fields, new analytics, new third parties)
-- Own the Data Processing Agreement (DPA) template for academies
+- Own the Data Processing Agreement (DPA) template for customers
 
 ### Incident Response
 - Define and own the security incident response plan
