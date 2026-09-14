@@ -47,7 +47,8 @@ Complete reference of all AI skills and resources available in this repository.
 | Project Orchestrator | `skills/enabling/project-orchestrator/SKILL.md` | Project coordination |
 | Research Synthesis | `skills/enabling/research-synthesis/SKILL.md` | Research analysis |
 | SEO Specialist | `skills/enabling/seo-specialist/SKILL.md` | Full-spectrum SEO — technical, JS rendering, content, migrations, local, AI search visibility |
-| UX/UI Designer | `skills/enabling/ux-ui-designer/SKILL.md` | Design standards |
+| UX/UI Designer | `skills/enabling/ux-ui-designer/SKILL.md` | Design standards for full product work (Figma/persona pipeline) |
+| Web Visual Design | `skills/enabling/web-visual-design/SKILL.md` | Avoiding "AI-generated" visual defaults on code-first sites (no Figma) — the usual case for client landing/institutional pages |
 
 ### Foundation Skills
 
