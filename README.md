@@ -4,13 +4,25 @@ This is the repository developers actually clone and reference day to day:
 `git clone git@github.com:beelabstudio/ai.git ~/repos/ai`. Every project's
 `AGENTS.md` points here (`~/repos/ai/skills/...`).
 
-There is a **separate** repository, `beelabstudio/.github`, kept as a mirror
-of this one's content — it exists only because GitHub requires that exact
-name for org-wide defaults (the PR template that auto-applies to repos
-without their own, and Copilot's org-level fallback). Don't confuse the
-two: `ai` is the one to clone and reference; `.github` is GitHub's own
-mechanism and should stay a mirror, not a second source of truth. If you
-change something here, mirror it there too (or flag that it needs doing).
+**Correction (2026-09-15):** an earlier version of this note described
+`beelabstudio/.github` as a separate repository kept in manual sync with
+this one. That was wrong — `git push` to `beelabstudio/.github` returns
+`This repository moved. Please use the new location: beelabstudio/ai`, and
+`gh repo view beelabstudio/.github` resolves to this same repo. **They are
+the same repository; `.github` was this repo's name before it was renamed
+to `ai`.** GitHub keeps old-name pushes/clones working as a redirect, which
+is why a stale local clone at `~/repos/.github` kept appearing to work.
+
+One real consequence of the rename: GitHub's org-wide defaults (a PR
+template that auto-applies to repos without their own, community health
+file fallbacks) require a repo **literally named** `.github` in the org.
+Since this repo is now named `ai`, no such repo currently exists, so that
+auto-fallback behaviour is inactive — repos without their own
+`PULL_REQUEST_TEMPLATE.md` no longer get one automatically. Whether that
+matters is a call for whoever owns the GitHub org: fine to ignore if every
+repo defines its own PR template anyway, or worth creating a small,
+dedicated `beelabstudio/.github` repo (holding only
+`PULL_REQUEST_TEMPLATE.md`) if the auto-fallback is wanted back.
 
 ## ⚠️ Global Rule — Language
 
