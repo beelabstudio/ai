@@ -39,6 +39,7 @@ Complete reference of all AI skills and resources available in this repository.
 
 | Skill | Path | Description |
 |-------|------|-------------|
+| Agent Reach | `skills/enabling/agent-reach/SKILL.md` | Multi-platform internet access — search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, Exa web search |
 | DevOps Engineer | `skills/enabling/devops-engineer/SKILL.md` | Infrastructure and CI/CD |
 | Documentation Writer | `skills/enabling/documentation-writer/SKILL.md` | Technical writing |
 | SEO Health Specialist | `skills/enabling/especialista-seo-saude/SKILL.md` | SEO for health sector |
