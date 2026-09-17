@@ -40,16 +40,31 @@ Complete reference of all AI skills and resources available in this repository.
 | Skill | Path | Description |
 |-------|------|-------------|
 | Agent Reach | `skills/enabling/agent-reach/SKILL.md` | Multi-platform internet access — search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, Exa web search |
+| Animate | `skills/enabling/animate/SKILL.md` | Build a web animation from scratch — correct easing curve, duration, and properties (Emil Kowalski) |
+| Animate (Expo) | `skills/enabling/animate-expo/SKILL.md` | Same animation bar for React Native/Expo — gestures, sheets, haptics, screen transitions, off-JS-thread motion (Emil Kowalski) |
+| Animation Vocabulary | `skills/enabling/animation-vocabulary/SKILL.md` | Precise vocabulary for briefing an AI on the animation you want (Emil Kowalski) |
+| Apple Design | `skills/enabling/apple-design/SKILL.md` | Apple's interface design and fluid-motion principles, translated for the web, from their WWDC talks (Emil Kowalski) |
+| Ask Sonner | `skills/enabling/ask-sonner/SKILL.md` | Setup, styling, recipes and common fixes for the Sonner toast library (Emil Kowalski) |
 | DevOps Engineer | `skills/enabling/devops-engineer/SKILL.md` | Infrastructure and CI/CD |
 | Documentation Writer | `skills/enabling/documentation-writer/SKILL.md` | Technical writing |
+| Emil Design Eng | `skills/enabling/emil-design-eng/SKILL.md` | Main design/animation skill — motion plus general interface design advice (Emil Kowalski) |
 | SEO Health Specialist | `skills/enabling/especialista-seo-saude/SKILL.md` | SEO for health sector |
 | UX/UI Health | `skills/enabling/especialista-ux-ui-saude/SKILL.md` | Health app UX/UI |
+| Find Animation Opportunities | `skills/enabling/find-animation-opportunities/SKILL.md` | Find UI spots that genuinely benefit from motion — and what not to animate (Emil Kowalski) |
+| Improve Animations | `skills/enabling/improve-animations/SKILL.md` | Audit a codebase's animations and produce prioritized, executable fix plans (Emil Kowalski) |
 | Integration Specialist | `skills/enabling/integration-specialist/SKILL.md` | System integration |
+| Mobile Native | `skills/enabling/mobile-native/SKILL.md` | Make a web app feel native on a phone — safe areas, tap highlights, the 100vh bug, and more (Emil Kowalski) |
+| Pick UI Library | `skills/enabling/pick-ui-library/SKILL.md` | Pick the right trusted UI library instead of hand-rolling or installing an abandoned package (Emil Kowalski) |
+| Playwright CLI | `skills/enabling/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) |
 | Project Orchestrator | `skills/enabling/project-orchestrator/SKILL.md` | Project coordination |
+| Prototype | `skills/enabling/prototype/SKILL.md` | Build multiple UI variants of a described piece and switch between them (Emil Kowalski) |
 | Research Synthesis | `skills/enabling/research-synthesis/SKILL.md` | Research analysis |
+| Review Animations | `skills/enabling/review-animations/SKILL.md` | Strict animation review against Emil Kowalski's rules |
 | SEO Specialist | `skills/enabling/seo-specialist/SKILL.md` | Full-spectrum SEO — technical, JS rendering, content, migrations, local, AI search visibility |
+| Transitions.dev | `skills/enabling/transitions-dev/SKILL.md` | 32 production-ready, drop-in CSS transitions (badges, modals, toasts, skeletons, etc.) |
 | UX/UI Designer | `skills/enabling/ux-ui-designer/SKILL.md` | Design standards for full product work (Figma/persona pipeline) |
 | Web Visual Design | `skills/enabling/web-visual-design/SKILL.md` | Avoiding "AI-generated" visual defaults on code-first sites (no Figma) — the usual case for client landing/institutional pages |
+| Write Swift | `skills/enabling/write-swift/SKILL.md` | Modern Swift — value types, Swift 6 concurrency, generics, performance, Swift Testing (Emil Kowalski) |
 
 ### Foundation Skills
 

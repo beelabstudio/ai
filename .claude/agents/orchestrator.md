@@ -24,7 +24,7 @@ one of these skills instead:
 |----------|------|--------|
 | C-Level | `skills/c-level/` | Strategic/cross-functional trade-offs: CEO (company strategy), CTO (architecture/tech), CFO (unit economics/billing), CPO (roadmap/product), COO (operations/support), CISO (security/compliance) |
 | Foundation | `skills/foundation/` | Core engineering roles: software engineer, software architect, DBA, QA engineer, product manager, data engineer |
-| Enabling | `skills/enabling/` | Cross-cutting capabilities: SEO, UX/UI design (`ux-ui-designer` for a full product with Figma, `web-visual-design` for a code-first site with none), integrations, DevOps, documentation, research synthesis, multi-platform internet access (`agent-reach`) |
+| Enabling | `skills/enabling/` | Cross-cutting capabilities: SEO, UX/UI design (`ux-ui-designer` for a full product with Figma, `web-visual-design` for a code-first site with none), integrations, DevOps, documentation, research synthesis, multi-platform internet access (`agent-reach`), browser automation (`playwright-cli`), motion/animation and Apple-style interface design (`animate`, `apple-design`, `review-animations`, `transitions-dev`, and the rest of the Emil Kowalski pack) |
 | Process | `skills/process/` | Workflow: git/PR workflow, business analysis, fiscal consultancy, GDPR/privacy, skill coordination |
 | Domain | `skills/domain/` | Specific technical/business domains (databases, migrations, nutrition, etc.) — grows as new expertise is captured |
 
@@ -95,6 +95,9 @@ Certain contexts require automatic activation of specific agents or workflows, w
 | Writing/reviewing site or app UI | Load `skills/enabling/web-visual-design` (code-first, no Figma) or `skills/enabling/ux-ui-designer` (full product) |
 | SEO, third-party integrations, GDPR/fiscal, git workflow | Load the matching `skills/enabling/` or `skills/process/` skill |
 | Search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, or general web search | Load `skills/enabling/agent-reach` |
+| Browser automation, E2E testing, or driving Playwright from the CLI | Load `skills/enabling/playwright-cli` |
+| Building/reviewing/auditing web or React Native animations, choosing easing/duration, Apple-style motion or interface design, picking a UI library, or making a web app feel native on mobile | Load the matching skill under `skills/enabling/` (`animate`, `animate-expo`, `review-animations`, `improve-animations`, `find-animation-opportunities`, `apple-design`, `mobile-native`, `pick-ui-library`, `prototype`, `animation-vocabulary`, `emil-design-eng`, `ask-sonner`, `write-swift`) |
+| Dropping in a ready-made CSS transition (modal, dropdown, toast, skeleton, badge, etc.) | Load `skills/enabling/transitions-dev` |
 | Complex multi-file changes | Create plan → Execute step by step → Validate |
 
 For anything not covered by the two rows above the fold, don't guess —
