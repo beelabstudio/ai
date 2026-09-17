@@ -77,7 +77,7 @@ The `skills/` directory contains reusable AI skill definitions (`SKILL.md` files
 |----------|-------------|
 | `c-level/` | Executive leadership skills (CEO, CTO, CFO, CPO, COO, CISO) |
 | `domain/` | Specialised domain knowledge (nutrition, databases, migrations…) |
-| `enabling/` | Cross-cutting capabilities (SEO, UX/UI, integrations, research, multi-platform internet access…) |
+| `enabling/` | Cross-cutting capabilities (SEO, UX/UI, integrations, research, multi-platform internet access, browser automation, motion/animation & Apple-style design…) |
 | `foundation/` | Core engineering roles (software engineer, QA, DBA, PM…) |
 | `process/` | Workflow and process skills (git, business analysis, fiscal…) |
 
