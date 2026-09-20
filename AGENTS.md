@@ -67,7 +67,14 @@ The complete and up-to-date skills catalog is the single source of truth:
 
 Everything under `skills/` is a **reference catalog** other projects copy or
 link to (see "Shared AI Skills" above) — being cataloged here doesn't make a
-skill active in this repo's own sessions. One exception is wired live:
+skill active in this repo's own sessions. One exception is wired live, purely
+for sessions that work *on this repo itself* (adding skills, editing rules,
+etc. — this conversation is one). **This is independent of, and doesn't
+substitute for, activating the skill inside a consuming project** (e.g.
+`beecreatorstudio`) — that's a separate `.claude/skills/task-observer/`
+created *inside that other project's own repo*, per "Activating Task Observer
+in another project" in `README.md`. Each project that wants the capability
+needs its own copy of this setup; this row only covers `ai` itself:
 
 | Skill | Path | Why it's active here |
 |-------|------|-----------------------|
