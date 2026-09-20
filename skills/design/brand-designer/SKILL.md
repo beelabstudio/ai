@@ -65,12 +65,19 @@ Look at 3–5 real competitors or category peers before proposing anything.
 The goal isn't imitation, it's knowing what to avoid — if every competitor
 already uses a blue-to-purple gradient and rounded sans-serif, that's now
 the generic look for the category, not a differentiator. This is also where
-the `web-visual-design` skill's ["AI-generated" tells
-checklist](../web-visual-design/SKILL.md) applies: none of those defaults
-(emoji-as-icons, blob gradients, pill buttons everywhere, warm-cream +
-terracotta editorial cliché, Inter/Space Grotesk as the safe pick) should
-survive into a real identity unless a specific reason ties them to this
-client.
+the [`frontend-taste`](../frontend-taste/SKILL.md) and
+[`web-visual-design`](../web-visual-design/SKILL.md) skills' "AI-generated"
+tells checklists apply: none of those defaults (emoji-as-icons, blob
+gradients, pill buttons everywhere, warm-cream + terracotta editorial
+cliché, Inter/Space Grotesk as the safe pick) should survive into a real
+identity unless a specific reason ties them to this client.
+
+For grounding against real, structured examples rather than vague
+recollection, [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)
+(MIT) is a curated collection of `DESIGN.md` analyses of real brand design
+systems (Stripe, Linear, Airbnb, Apple, and more) — useful to see how a
+specific real brand actually structures its palette/type/spacing decisions,
+not something to copy from directly.
 
 ### 3. Direction exploration (name it, then justify it)
 
@@ -202,6 +209,15 @@ weight, or measurement that's wrong, not "this feels off."
 - [`ux-ui-designer`](../ux-ui-designer/SKILL.md) — same relationship for
   product work with a Figma/dev-handoff pipeline; borrow its WCAG 2.1 AA
   floor regardless of which skill leads.
+- [`frontend-taste`](../frontend-taste/SKILL.md) and
+  [`web-interface-guidelines`](../web-interface-guidelines/SKILL.md) — run
+  downstream of this skill, as the taste and technical-correctness passes
+  once `web-visual-design`/`ux-ui-designer` have applied this skill's
+  output.
+- [`image-to-code`](../image-to-code/SKILL.md) — for reconstructing a
+  specific reference image/screenshot rather than establishing a new
+  identity; load this skill instead when the task is "match this exactly,"
+  not "invent a system."
 - `anthropic-skills:canvas-design` — useful once a direction is locked and
   the team wants a polished visual asset (poster, mood board, social
   graphic) expressing it; don't use it to *choose* the direction, that's

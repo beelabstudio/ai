@@ -86,3 +86,21 @@ This skill is activated before any screen is coded. No UI is built without a val
 - **Screen designs** — mobile + desktop, all states (default, loading, empty, error, success)
 - **Handoff spec** — annotated Figma with measurements, interactions, and edge cases
 - **UX acceptance criteria** — per screen, used by QA to validate implementation
+
+## Relationship to other skills
+
+- `~/repos/ai/skills/design/brand-designer/SKILL.md` — load first when the
+  product has no locked palette/typeface/voice yet; this skill applies an
+  existing identity rather than inventing one.
+- `~/repos/ai/skills/design/frontend-taste/SKILL.md` — run as an
+  independent taste/AI-tells pass on any marketing surface inside the
+  product (landing, pricing, onboarding copy screens); the accessibility
+  and mobile-first rules above cover the core app screens, not the
+  aesthetic judgment call.
+- `~/repos/ai/skills/design/web-interface-guidelines/SKILL.md` — a more
+  exhaustive MUST/SHOULD/NEVER checklist for interaction, forms, and
+  performance correctness than the Accessibility section above; run it
+  before developer handoff.
+- `~/repos/ai/skills/design/web-visual-design/SKILL.md` — the equivalent
+  skill for code-first sites with no Figma/dev-handoff split. Don't import
+  this skill's full process into a one-page marketing site.

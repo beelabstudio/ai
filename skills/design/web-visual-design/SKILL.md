@@ -144,3 +144,14 @@ visitor:
   its Figma-centric process to a one-page marketing site; do borrow its
   accessibility floor (WCAG 2.1 AA) regardless of which skill you're
   primarily following.
+- `~/repos/ai/skills/design/frontend-taste/SKILL.md` — run this *after*
+  the process above as an independent taste/AI-tells pass; it carries a
+  much longer, more mechanical checklist than the "Tells to avoid" section
+  here.
+- `~/repos/ai/skills/design/web-interface-guidelines/SKILL.md` — the
+  technical-correctness counterpart (keyboard, forms, performance, ARIA);
+  run alongside `frontend-taste`, not instead of it.
+- `~/repos/ai/skills/design/image-to-code/SKILL.md` — when the task is
+  reconstructing a specific reference image/screenshot rather than
+  designing from a brief, that skill's exact-replication mandate overrides
+  this skill's "avoid AI tells" process — the reference is the authority.
