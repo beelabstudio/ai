@@ -46,6 +46,8 @@ Complete reference of all AI skills and resources available in this repository.
 | Brand Designer | `skills/design/brand-designer/SKILL.md` | Build a client's visual identity from scratch — palette, typography, logo direction, voice/tone — before `web-visual-design` or `ux-ui-designer` apply it |
 | Emil Design Eng | `skills/design/emil-design-eng/SKILL.md` | Main design/animation skill — motion plus general interface design advice (Emil Kowalski) |
 | Find Animation Opportunities | `skills/design/find-animation-opportunities/SKILL.md` | Find UI spots that genuinely benefit from motion — and what not to animate (Emil Kowalski) |
+| Frontend Taste | `skills/design/frontend-taste/SKILL.md` | Deep aesthetic-judgment / AI-tells pass for landing pages and portfolios — dial system, bias-correction rules, redesign protocol, pre-flight checklist |
+| Image to Code | `skills/design/image-to-code/SKILL.md` | Reconstruct working code from a reference screenshot/mockup with pixel-level fidelity instead of a loose interpretation |
 | Improve Animations | `skills/design/improve-animations/SKILL.md` | Audit a codebase's animations and produce prioritized, executable fix plans (Emil Kowalski) |
 | Mobile Native | `skills/design/mobile-native/SKILL.md` | Make a web app feel native on a phone — safe areas, tap highlights, the 100vh bug, and more (Emil Kowalski) |
 | Pick UI Library | `skills/design/pick-ui-library/SKILL.md` | Pick the right trusted UI library instead of hand-rolling or installing an abandoned package (Emil Kowalski) |
@@ -54,6 +56,7 @@ Complete reference of all AI skills and resources available in this repository.
 | Transitions.dev | `skills/design/transitions-dev/SKILL.md` | 32 production-ready, drop-in CSS transitions (badges, modals, toasts, skeletons, etc.) |
 | UX/UI Designer | `skills/design/ux-ui-designer/SKILL.md` | Design standards for full product work (Figma/persona pipeline) |
 | UX/UI Health | `skills/design/especialista-ux-ui-saude/SKILL.md` | Health app UX/UI |
+| Web Interface Guidelines | `skills/design/web-interface-guidelines/SKILL.md` | MUST/SHOULD/NEVER technical checklist — interaction, forms, animation, accessibility, performance correctness |
 | Web Visual Design | `skills/design/web-visual-design/SKILL.md` | Avoiding "AI-generated" visual defaults on code-first sites (no Figma) — the usual case for client landing/institutional pages |
 
 ### Domain Skills
@@ -114,7 +117,9 @@ Complete reference of all AI skills and resources available in this repository.
 | Skill | Path | Description |
 |-------|------|-------------|
 | Agent Reach | `skills/tools/agent-reach/SKILL.md` | Multi-platform internet access — search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, Exa web search |
-| Playwright CLI | `skills/tools/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) |
+| Figma MCP | `skills/tools/figma-mcp/SKILL.md` | Set up and use Figma's official MCP server to pull real components/variables/tokens into code instead of guessing from a screenshot |
+| Playwright CLI | `skills/tools/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) — the default for routine coding-agent automation |
+| Playwright MCP | `skills/tools/playwright-mcp/SKILL.md` | Playwright's MCP server for stateful/exploratory browser sessions — primarily visual design review (screenshot + audit against frontend-taste/web-interface-guidelines) |
 
 ## Claude Code Resources
 
