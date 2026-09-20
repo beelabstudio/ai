@@ -13,7 +13,7 @@ an agent — no designer, no Figma file, no handoff. This skill is for that
 case.
 
 If the project has an actual product team, personas, and a Figma pipeline
-(e.g. UFlowApp), use `~/repos/ai/skills/enabling/ux-ui-designer/SKILL.md`
+(e.g. UFlowApp), use `~/repos/ai/skills/design/ux-ui-designer/SKILL.md`
 instead — that one assumes a design/dev split this skill doesn't.
 
 **Load this before writing the first line of layout/CSS**, not after. A
@@ -133,9 +133,13 @@ visitor:
 
 ## Relationship to other skills
 
-- `~/repos/ai/skills/enabling/seo-specialist/SKILL.md` — technical SEO,
+- `~/repos/ai/skills/design/brand-designer/SKILL.md` — load this *first*
+  when the client has no locked palette/typeface/voice yet. This skill
+  assumes that foundation already exists (from the second brain's research
+  or from that skill's output); it doesn't invent one from nothing.
+- `~/repos/ai/skills/marketing/seo-specialist/SKILL.md` — technical SEO,
   independent of visual direction, load alongside this one.
-- `~/repos/ai/skills/enabling/ux-ui-designer/SKILL.md` — for actual product
+- `~/repos/ai/skills/design/ux-ui-designer/SKILL.md` — for actual product
   work with a design/dev split (personas, Figma, dev handoff). Don't apply
   its Figma-centric process to a one-page marketing site; do borrow its
   accessibility floor (WCAG 2.1 AA) regardless of which skill you're

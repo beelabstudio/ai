@@ -33,3 +33,6 @@ build/
 # Claude Code personal overrides
 CLAUDE.local.md
 .claude/settings.local.json
+
+# Other AI tool local config/scratch (not shared repo content)
+.commandcode/
