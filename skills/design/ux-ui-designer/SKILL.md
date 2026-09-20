@@ -104,3 +104,7 @@ This skill is activated before any screen is coded. No UI is built without a val
 - `~/repos/ai/skills/design/web-visual-design/SKILL.md` — the equivalent
   skill for code-first sites with no Figma/dev-handoff split. Don't import
   this skill's full process into a one-page marketing site.
+- `~/repos/ai/skills/tools/figma-mcp/SKILL.md` — use during developer
+  handoff to pull real components/variables/tokens from the Figma file
+  directly into code, instead of a developer re-deriving them by eye from
+  the design.

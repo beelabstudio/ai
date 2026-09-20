@@ -100,3 +100,10 @@ translation loss between "what the image shows" and "what the code says."
 - [`web-visual-design`](../web-visual-design/SKILL.md) — that skill's
   "AI-generated tells" checklist assumes the model is inventing the design;
   it doesn't apply to a faithful reconstruction task.
+- [`figma-mcp`](../../tools/figma-mcp/SKILL.md) — if the reference is
+  actually a Figma file (not a flat screenshot), use that skill instead —
+  structured component/variable data beats reading pixels every time.
+- [`playwright-mcp`](../../tools/playwright-mcp/SKILL.md) — for the
+  "verify, don't assume" step above: screenshot the rendered result and
+  compare it against the reference image directly, rather than reading the
+  code and declaring it correct.

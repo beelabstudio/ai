@@ -473,3 +473,11 @@ See [references/pr-attachments.md](references/pr-attachments.md) for alt text, i
 * **Video recording** [references/video-recording.md](references/video-recording.md)
 * **Attaching screenshots and videos to pull requests** [references/pr-attachments.md](references/pr-attachments.md)
 * **Inspecting element attributes** [references/element-attributes.md](references/element-attributes.md)
+
+## Relationship to other skills
+
+- [`playwright-mcp`](../playwright-mcp/SKILL.md) — this CLI is the default
+  for routine automation and test work (more token-efficient, per
+  Microsoft's own guidance). Reach for the MCP skill instead specifically
+  for visual design review, open-ended page exploration, or long-running
+  sessions that need persistent browser state.

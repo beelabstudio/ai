@@ -1,7 +1,7 @@
 ---
 name: frontend-taste
 description: Deep aesthetic-judgment pass for landing pages, portfolios, and marketing sites — the "does this look AI-generated" arbiter. Use alongside web-visual-design (BLS process) and web-interface-guidelines (technical correctness) as the taste/quality specialist in a design review. Not for dashboards, data tables, or multi-step product UI.
-source: condensed and adapted from https://github.com/Leonxlnx/taste-skill (MIT)
+source: condensed and adapted from https://github.com/Leonxlnx/taste-skill (MIT), with additions from https://github.com/pbakaus/impeccable (Apache 2.0) — see "A note on Impeccable" below
 ---
 
 # Frontend Taste
@@ -33,6 +33,22 @@ Do not default to: purple/blue AI gradients, a centered hero over a dark mesh
 background, three identical feature cards, glassmorphism on everything,
 infinite-loop micro-animations everywhere, or Inter + slate-900 as the
 unquestioned typography choice.
+
+Name the **mode** the surface is actually in — it decides how much this
+skill's rules even apply, before the dials do:
+
+| Mode | The visitor's job | Design is... |
+|---|---|---|
+| **Persuade** | decide and act | the product — landing pages, pricing, campaigns |
+| **Operate** | complete a task | secondary to scanability and consistency — app UI, dashboards, settings |
+| **Read** | understand something | structured for comprehension first — docs, articles, changelogs |
+| **Experience** | be inside the work | receding in favor of the artifact — portfolios, galleries, showcases |
+
+This skill's rules (dials, bias-correction, AI tells) are written for
+**Persuade** and **Experience** surfaces. A docs page for a design tool is
+still **Read** — don't apply the hero/CTA/eyebrow rules to it. A SaaS
+product's own dashboard is **Operate** — defer to the design system in
+Section 3, not this skill's aesthetic judgment.
 
 ## 2. Set the three dials
 
@@ -167,6 +183,35 @@ execution is:
   alt text, quote attribution. Restructure with a period, comma, or regular
   hyphen. This one has no "sparingly is fine" exception.
 
+### 6.A Additional tells (from Impeccable's "craft floor")
+
+A stricter, complementary set — apply these as hard bans, not "use
+sparingly":
+
+- **The browser surfaces you didn't draw still carry the design.** Text
+  selection color, the caret, custom scrollbars, focus rings, underline
+  offset, and tabular-number alignment in data all ship with unthemed
+  browser defaults by default. Theme them from the palette — this is the
+  cheapest signal a page was actually designed rather than assembled, and
+  the one most commonly skipped.
+- **Kicker/eyebrow labels are a stricter ban here than Section 5's "max 1
+  per 3 sections."** If the brief doesn't specifically call for one, default
+  to none — delete the label and let the heading carry its own weight.
+- **Type measure specifics:** body line length 65-75ch, display size caps
+  around `6rem`, tracking floor around `-0.04em` for large display type.
+- **No geometric masks standing in for photographic cutouts.** A circle,
+  polygon, or radial-gradient crop approximating a subject's silhouette
+  reads as the cheap version — derive a real alpha matte or use an actual
+  cutout asset.
+- **No monospace as a costume for "feels technical.**" Reserve monospace for
+  actual code, data, or measurement — not as a decorative signal.
+- **No system display face** (Impact, Arial Black, the platform default
+  sans) as the display voice of a page with its own established visual
+  world — source and self-host a face that actually matches; the closest
+  installed font is a failure, not an acceptable fallback.
+- **No hard-offset block shadows** (`box-shadow: 4px 4px 0`) outside an
+  actual neobrutalist direction — it's a costume, not a depth system.
+
 ## 7. Redesign protocol
 
 Misclassifying "redesign" as "greenfield" is the most common source of bad
@@ -221,3 +266,25 @@ redesign output.
 - [`brand-designer`](../brand-designer/SKILL.md) — upstream of this skill;
   provides the locked palette/typeface/voice this skill's rules get applied
   against, instead of this skill inventing one.
+- [`playwright-mcp`](../../tools/playwright-mcp/SKILL.md) — use to actually
+  see the rendered result (screenshots at desktop/tablet/mobile) before
+  running this skill's pre-flight check; don't sign off from reading the
+  code alone.
+
+## A note on Impeccable
+
+[pbakaus/impeccable](https://github.com/pbakaus/impeccable) (69k+ stars) is
+a real, more ambitious product than this skill: a versioned CLI engine, a
+browser extension for live visual iteration, 61 deterministic detector
+rules, and 24 slash-style commands (`audit`, `critique`, `polish`, `bolder`,
+`harden`, and more), installed via `npx impeccable install`. That's a
+different shape of tool than this repo's skills — every skill here is a
+self-contained markdown file with no runtime dependency, while Impeccable
+requires installing and running its own binary per project.
+
+Rather than build a shallow imitation of a tool we can't actually run, this
+skill adopted Impeccable's portable ideas directly (the Modes framework in
+Section 1, the craft-floor additions in Section 6.A) with credit, and left
+the rest alone. If a project already has Impeccable installed, defer to its
+live commands over this skill's static checklist — its detector rules run
+against the actual rendered page, this skill's don't.

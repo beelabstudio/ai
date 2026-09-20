@@ -117,7 +117,9 @@ Complete reference of all AI skills and resources available in this repository.
 | Skill | Path | Description |
 |-------|------|-------------|
 | Agent Reach | `skills/tools/agent-reach/SKILL.md` | Multi-platform internet access — search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, Exa web search |
-| Playwright CLI | `skills/tools/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) |
+| Figma MCP | `skills/tools/figma-mcp/SKILL.md` | Set up and use Figma's official MCP server to pull real components/variables/tokens into code instead of guessing from a screenshot |
+| Playwright CLI | `skills/tools/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) — the default for routine coding-agent automation |
+| Playwright MCP | `skills/tools/playwright-mcp/SKILL.md` | Playwright's MCP server for stateful/exploratory browser sessions — primarily visual design review (screenshot + audit against frontend-taste/web-interface-guidelines) |
 
 ## Claude Code Resources
 
