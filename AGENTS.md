@@ -71,7 +71,7 @@ skill active in this repo's own sessions. One exception is wired live:
 
 | Skill | Path | Why it's active here |
 |-------|------|-----------------------|
-| Task Observer | `.claude/skills/task-observer/SKILL.md` (source of truth: `skills/process/task-observer/SKILL.md` — keep both in sync when editing, same as `.claude/agents`, `.claude/commands`, `.claude/rules`) | Watches this repo's own sessions for recurring patterns/corrections worth turning into a new or improved skill — fitting since this repo *is* the skill catalog. Per its own frontmatter, description-matching alone isn't reliable, so it's called out explicitly here: **run its Session Start Protocol at the start of any multi-step session in this repo.** `rules/security.md` overrides its permission-retry instruction — see the note under that skill's attribution block. |
+| Task Observer | `.claude/skills/task-observer/` is a symlink to `skills/process/task-observer/` — edit the latter only, the link stays in sync automatically | Watches this repo's own sessions for recurring patterns/corrections worth turning into a new or improved skill — fitting since this repo *is* the skill catalog. Per its own frontmatter, description-matching alone isn't reliable, so it's called out explicitly here: **run its Session Start Protocol at the start of any multi-step session in this repo.** `rules/security.md` overrides its permission-retry instruction — see the note under that skill's attribution block. |
 
 ## Standards
 
