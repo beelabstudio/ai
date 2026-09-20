@@ -1,4 +1,4 @@
-# BEELABSTUDIO — AI Standards
+# Bee Lab Studio — AI Standards
 
 This is the repository developers actually clone and reference day to day:
 `git clone git@github.com:beelabstudio/ai.git ~/repos/ai`. Every project's
