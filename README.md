@@ -34,29 +34,43 @@ dedicated `beelabstudio/.github` repo (holding only
 .github/
 ├── PULL_REQUEST_TEMPLATE.md        # Generic Pull Request template
 └── copilot-instructions.md         # GitHub Copilot instructions
-.claude/                            # Claude Code configuration
-├── agents/                         # Subagent personas + auto-invocation triggers
-│   ├── orchestrator.md             # Central coordinator
-│   ├── code-reviewer.md            # Code quality reviewer
-│   └── security-auditor.md         # Security auditor
-├── commands/                       # Slash commands
-│   ├── review.md                   # → /project:review
-│   ├── fix-issue.md                # → /project:fix-issue
-│   └── deploy.md                   # → /project:deploy
-├── rules/                          # Modular instruction files
-│   ├── code-style.md               # Naming and formatting standards
-│   ├── testing.md                  # Test requirements
-│   └── api-conventions.md          # REST API standards
-└── settings.json                   # Shared configuration
+.claude/                            # Claude Code native config
+└── settings.json                   # Permissions, hooks, model, theme
+agents/                             # Specialized agents
+├── orchestrator.md                 # Central coordinator
+├── code-reviewer.md                # Code quality reviewer
+└── security-auditor.md             # Security auditor
+commands/                           # Slash commands
+├── review.md                       # → /project:review
+├── fix-issue.md                    # → /project:fix-issue
+└── deploy.md                       # → /project:deploy
+rules/                              # Coding standards (code style, testing, API, security)
+├── code-style.md                   # Naming and formatting standards
+├── testing.md                      # Test requirements
+├── api-conventions.md              # REST API standards
+└── security.md                     # Prompt defense, secrets, input validation
 skills/
 ├── c-level/                        # Executive leadership AI skills
+├── content/                        # Technical writing & research skills
+├── design/                         # Interface, UX/UI, visual design & motion skills
 ├── domain/                         # Domain-specific AI skills
-├── enabling/                       # Enabling / cross-cutting AI skills
-├── foundation/                     # Foundation engineering role skills
-└── process/                        # Workflow and process skills
+├── foundation/                     # Engineering roles & practices
+├── marketing/                      # SEO & growth skills
+├── process/                        # Workflow and process skills
+├── security/                       # Security review & auditing
+└── tools/                          # Internet access & browser automation
+contexts/                           # Reusable working modes
+├── dev.md                          # Active development mode
+├── research.md                     # Exploration mode
+└── review.md                       # Code review mode
+SOUL.md                             # Core identity and principles
 CLAUDE.md                           # Team instructions for Claude
 CLAUDE.local.md                     # Personal overrides (gitignored)
 ```
+
+> **Symlinks:** the canonical `agents/`, `commands/`, `rules/`, and `skills/` content lives
+> at the top level. `.claude/` contains `settings.json` plus symlinks back to those folders
+> so Claude Code discovers them from its native `.claude/` paths.
 
 ## 📋 Pull Request Template
 
@@ -76,10 +90,14 @@ The `skills/` directory contains reusable AI skill definitions (`SKILL.md` files
 | Category | Description |
 |----------|-------------|
 | `c-level/` | Executive leadership skills (CEO, CTO, CFO, CPO, COO, CISO) |
+| `content/` | Content and knowledge work (technical writing, research synthesis) |
+| `design/` | Interface, UX/UI, visual design & motion/animation skills (Apple-style design, animation, transitions, prototyping, UI libraries) |
 | `domain/` | Specialised domain knowledge (nutrition, databases, migrations…) |
-| `enabling/` | Cross-cutting capabilities (SEO, UX/UI, integrations, research, multi-platform internet access, browser automation, motion/animation & Apple-style design…) |
-| `foundation/` | Core engineering roles (software engineer, QA, DBA, PM…) |
+| `foundation/` | Core engineering roles and practices (software engineer, architect, QA, DBA, API design, TDD, onboarding…) |
+| `marketing/` | Marketing and growth (SEO) |
 | `process/` | Workflow and process skills (git, business analysis, fiscal…) |
+| `security/` | Security review and configuration auditing |
+| `tools/` | External-access tooling (internet access, browser automation) |
 
 ## 🤖 Using with AI Assistants
 
@@ -93,12 +111,14 @@ New projects should start from the AGENTS.md template in the
 `beelabstudio-brain` second brain
 (`99-meta/templates/AGENTS.md`), not from a blank file — it bakes in the
 infra/git/language conventions so a fresh session doesn't have to
-rediscover them. This repo includes a complete `.claude/` setup for
+rediscover them. This repo includes the full reusable structure
+(`agents/`, `commands/`, `rules/`, plus `.claude/settings.json`) for
 reference:
 
 1. **Copy the structure** to your project:
    ```bash
-   cp -r ~/repos/ai/.claude ./
+   cp -r ~/repos/ai/agents ~/repos/ai/commands ~/repos/ai/rules ./
+   mkdir -p .claude && cp ~/repos/ai/.claude/settings.json .claude/
    cp ~/repos/ai/AGENTS.md ./  # then adapt via the brain template above
    ```
 
@@ -121,7 +141,7 @@ Then reference skills from your project's AI configuration:
 ~/repos/ai/skills/<category>/<skill-name>/SKILL.md
 ```
 
-**For Claude Code** (copy and adapt from `.claude/` folder)
+**For Claude Code** (copy and adapt `agents/`, `commands/`, `rules/`, and `.claude/settings.json`)
 
 ## 🏗️ Default project stack
 
