@@ -139,6 +139,40 @@ reference:
    project, any Claude Code session there opens with the Orchestrator active and
    routes multi-step requests to the right skill, agent, or command on its own.
 
+### Activating Task Observer in another project
+
+Being cataloged under `skills/` does **not** make a skill active anywhere —
+it's a reference other projects copy or link to. One skill in this catalog,
+[Task Observer](skills/process/task-observer/SKILL.md) (vendored from
+[rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all),
+CC BY 4.0), watches work sessions for recurring patterns and corrections
+worth turning into new or improved skills. It's wired live in this repo's
+own `.claude/skills/task-observer` (a symlink to the source under
+`skills/process/`, kept in sync automatically). To activate it in another
+project too:
+
+1. Symlink it in — do not copy the files, so the project always tracks the
+   latest version in `~/repos/ai`:
+   ```bash
+   mkdir -p .claude/skills
+   ln -s ~/repos/ai/skills/process/task-observer .claude/skills/task-observer
+   ```
+2. Reference it explicitly in that project's own `AGENTS.md` — its
+   frontmatter states that description-matching alone isn't a reliable
+   trigger. If `AGENTS.md` already has a "Shared skills" table (from the
+   `beelabstudio-brain` template), add a row pointing at
+   `.claude/skills/task-observer/SKILL.md`; otherwise add a short section
+   saying its Session Start Protocol should run at the start of any
+   multi-step session.
+3. Restart the Claude Code session in that project — new skills are only
+   picked up at session start.
+
+`rules/security.md` (this repo's and, if copied, the target project's) takes
+precedence over the skill's own instruction to retry a denied or failed tool
+call through an alternate interface — that override is already written
+inline in the vendored `SKILL.md`, right under its attribution block, so
+nothing else needs to be added for it.
+
 ### Setup
 
 Clone this repository to use shared skills locally:
