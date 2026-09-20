@@ -73,6 +73,28 @@ skill active in this repo's own sessions. One exception is wired live:
 |-------|------|-----------------------|
 | Task Observer | `.claude/skills/task-observer/` is a symlink to `skills/process/task-observer/` — edit the latter only, the link stays in sync automatically | Watches this repo's own sessions for recurring patterns/corrections worth turning into a new or improved skill — fitting since this repo *is* the skill catalog. Per its own frontmatter, description-matching alone isn't reliable, so it's called out explicitly here: **run its Session Start Protocol at the start of any multi-step session in this repo.** `rules/security.md` overrides its permission-retry instruction — see the note under that skill's attribution block. |
 
+### Contexts (reference — not auto-loaded)
+
+`contexts/` holds working-mode prose (`dev.md`, `research.md`, `review.md`) but
+Claude Code has no native mechanism that switches into one automatically —
+listing them in this repo doesn't activate anything by itself. The
+Orchestrator (`agents/orchestrator.md`) is the one place that actually knows
+to load a matching file when a request calls for a mode switch; if you add a
+new context file, add a row to its routing table too, or it stays unreachable.
+
+### A note on `.claude/settings.json` hooks
+
+Its `hooks.PreToolUse` entry gates `git commit` on `npm run lint && npm run
+typecheck` when the target project has a `package.json` (a no-op otherwise,
+which is why this repo — a docs/skills catalog with no `package.json` — never
+triggers it). An earlier version of this file used a `"pre-commit"` key,
+which is **not a real Claude Code hook event** and was silently ignored —
+the lint/typecheck gate it claimed to run never actually ran. If you add
+hooks here, use one of Claude Code's real event names
+(`PreToolUse`, `PostToolUse`, `Stop`, `SessionStart`, etc. — see
+[hooks docs](https://code.claude.com/docs/en/hooks.md)) and verify the
+matcher actually fires before trusting it as a gate.
+
 ## Standards
 
 ### Code Style

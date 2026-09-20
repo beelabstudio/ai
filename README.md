@@ -59,18 +59,23 @@ skills/
 ├── process/                        # Workflow and process skills
 ├── security/                       # Security review & auditing
 └── tools/                          # Internet access & browser automation
-contexts/                           # Reusable working modes
-├── dev.md                          # Active development mode
-├── research.md                     # Exploration mode
-└── review.md                       # Code review mode
+contexts/                           # Reusable working modes — reference only, not
+├── dev.md                          # auto-loaded by Claude Code; the Orchestrator
+├── research.md                     # reads the matching file when a request calls
+└── review.md                       # for a mode switch (see agents/orchestrator.md)
 SOUL.md                             # Core identity and principles
 CLAUDE.md                           # Team instructions for Claude
 CLAUDE.local.md                     # Personal overrides (gitignored)
 ```
 
-> **Symlinks:** the canonical `agents/`, `commands/`, `rules/`, and `skills/` content lives
-> at the top level. `.claude/` contains `settings.json` plus symlinks back to those folders
-> so Claude Code discovers them from its native `.claude/` paths.
+> **Symlinks:** the canonical `agents/`, `commands/`, and `rules/` content lives at the
+> top level; every file under `.claude/agents/`, `.claude/commands/`, and
+> `.claude/rules/` is a per-file symlink back to it, so editing the top-level file is
+> enough — Claude Code discovers them from its native `.claude/` paths and there's
+> nothing to keep in sync. `skills/` is different: it's a reference catalog, not
+> mirrored into `.claude/` wholesale — only [Task Observer](skills/process/task-observer/SKILL.md)
+> is individually symlinked into `.claude/skills/`, for the reason explained in
+> "Activating Task Observer in another project" below.
 
 ## 📋 Pull Request Template
 

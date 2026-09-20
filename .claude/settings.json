@@ -13,9 +13,16 @@
     ]
   },
   "hooks": {
-    "pre-commit": [
-      "npm run lint",
-      "npm run typecheck"
+    "PreToolUse": [
+      {
+        "matcher": "tool_name == 'Bash' && input.command.startsWith('git commit')",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if [ -f package.json ]; then npm run lint && npm run typecheck; fi"
+          }
+        ]
+      }
     ]
   },
   "agent": "orchestrator",
