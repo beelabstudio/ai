@@ -288,3 +288,28 @@ Section 1, the craft-floor additions in Section 6.A) with credit, and left
 the rest alone. If a project already has Impeccable installed, defer to its
 live commands over this skill's static checklist — its detector rules run
 against the actual rendered page, this skill's don't.
+
+### When to actually install it on a client project
+
+Not a default — BLS's usual scope (a code-first institutional/marketing
+site handled by `web-visual-design`) doesn't need it. Consider proposing
+`npx impeccable install` on a specific project when at least one of these is
+true:
+
+- **The client wants continuous, automated design QA**, not a one-time
+  review — Impeccable's hooks re-run its 61 detector rules after every UI
+  edit, catching regressions as they happen instead of only at a final
+  pre-flight check someone has to remember to run.
+- **The engagement includes a live variant-selection session with the
+  client** — `/impeccable live` and `/impeccable generate` let a
+  stakeholder pick between real rendered variants in the browser instead of
+  choosing from a text description of options.
+- **The engagement is a larger, longer-running product build**, not a
+  single site — `PRODUCT.md`'s persistent audience/purpose/constraints
+  context pays off across many sessions in a way that isn't worth the setup
+  for a short one-off project.
+
+Before proposing it on a real client engagement, verify current pricing/
+usage limits for the browser extension and live mode at
+[impeccable.style](https://impeccable.style) — not confirmed as part of
+this skill's research and may have changed.
