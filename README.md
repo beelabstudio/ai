@@ -122,9 +122,21 @@ reference:
    cp ~/repos/ai/AGENTS.md ./  # then adapt via the brain template above
    ```
 
-2. **Customize** `AGENTS.md` with your project description
+2. **Customize** `AGENTS.md` with your project description — the copy from step 1 is
+   this repo's own org-wide `AGENTS.md`, not a blank template. Open it and replace the
+   generic content with what's specific to *this* project: project name and purpose,
+   actual tech stack (see "Default project stack" below — don't leave the generic
+   instructions from this repo in place if they don't apply),
+   hosting/deploy target, and any domain-specific conventions. Start from the filled-in
+   template at `beelabstudio-brain/99-meta/templates/AGENTS.md` rather than editing this
+   repo's copy from scratch — it already has the placeholders and the infra/git/language
+   conventions baked in.
 
-3. **Use the Orchestrator** for any complex task - it will route to the right resources
+3. **Use the Orchestrator** for any complex task - it will route to the right resources.
+   No setup action is needed beyond step 1: `.claude/settings.json` already sets
+   `"agent": "orchestrator"` as the default, so once that file is copied into the
+   project, any Claude Code session there opens with the Orchestrator active and
+   routes multi-step requests to the right skill, agent, or command on its own.
 
 ### Setup
 
@@ -144,6 +156,19 @@ Then reference skills from your project's AI configuration:
 **For Claude Code** (copy and adapt `agents/`, `commands/`, `rules/`, and `.claude/settings.json`)
 
 ## 🏗️ Default project stack
+
+If a project's own `AGENTS.md` doesn't specify a stack, **don't default to the list
+below silently.** Invoke the [`software-architect`](skills/foundation/software-architect/SKILL.md)
+skill (or [`cto`](skills/c-level/cto/SKILL.md), which routes to it for stack decisions —
+see its "Skills to Activate" table) to ask about the project's actual requirements —
+expected scale, team size, whether it needs a backend/database, hosting target,
+content model — and propose the best-fit stack from that. Record the decision as an
+ADR (`docs/adr/`, per `software-architect`'s ADR format) so the choice and its
+trade-offs are on record, not just assumed.
+
+The list below is the **fallback for the simplest recurring case** this org actually
+builds — a static institutional or marketing site with no dynamic backend needs — not
+a default to reach for before that conversation happens:
 
 - HTML5 + CSS3 + Vanilla JavaScript (ES6+)
 - GitHub Actions for CI/CD

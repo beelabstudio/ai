@@ -1,4 +1,4 @@
-# BEELABSTUDIO — AI Agent Instructions
+# Bee Lab Studio — AI Agent Instructions
 
 > **Global Rule — Language**: All documentation, comments, commit messages, README files,
 > PR descriptions, and any other written artifact must be in English — regardless of the
@@ -15,7 +15,7 @@
 
 ## Project Context
 
-This is the central repository for BEELABSTUDIO organisation standards, containing:
+This is the central repository for Bee Lab Studio organisation standards, containing:
 
 - **Shared AI skills** (`skills/`) — reusable skill definitions for any AI assistant
 - **Agents** (`agents/`) — orchestrator and specialized reviewers
