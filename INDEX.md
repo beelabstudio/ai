@@ -88,6 +88,7 @@ Complete reference of all AI skills and resources available in this repository.
 
 | Skill | Path | Description |
 |-------|------|-------------|
+| Instagram Marketing | `skills/marketing/instagram-marketing/SKILL.md` | Bundle of 9 skills for Instagram content ops — caption writing, carousel planning, hook extraction, hashtag sizing, AI-tell humanizing, weekly content planning, cross-platform repurposing, profile optimization, audience insights; publishes via Publora (vendored from [sergebulaev/instagram-skills](https://github.com/sergebulaev/instagram-skills)) |
 | SEO Health Specialist | `skills/marketing/especialista-seo-saude/SKILL.md` | SEO for health sector |
 | SEO Specialist | `skills/marketing/seo-specialist/SKILL.md` | Full-spectrum SEO — technical, JS rendering, content, migrations, local, AI search visibility |
 
