@@ -119,18 +119,19 @@ reference:
    ```bash
    cp -r ~/repos/ai/agents ~/repos/ai/commands ~/repos/ai/rules ./
    mkdir -p .claude && cp ~/repos/ai/.claude/settings.json .claude/
-   cp ~/repos/ai/AGENTS.md ./  # then adapt via the brain template above
+   cp "~/repos/beelabstudio-brain/Bee Lab Studio - Brain/99-meta/templates/AGENTS.md" ./AGENTS.md
    ```
+   Note the last line copies the **template from the second brain**, not this repo's
+   own `AGENTS.md` — this repo's copy documents *its own* org standards and isn't
+   meant to be reused verbatim as another project's starting file.
 
-2. **Customize** `AGENTS.md` with your project description — the copy from step 1 is
-   this repo's own org-wide `AGENTS.md`, not a blank template. Open it and replace the
-   generic content with what's specific to *this* project: project name and purpose,
-   actual tech stack (see "Default project stack" below — don't leave the generic
-   instructions from this repo in place if they don't apply),
-   hosting/deploy target, and any domain-specific conventions. Start from the filled-in
-   template at `beelabstudio-brain/99-meta/templates/AGENTS.md` rather than editing this
-   repo's copy from scratch — it already has the placeholders and the infra/git/language
-   conventions baked in.
+2. **Customize** `AGENTS.md` with your project description — fill in every
+   `{{placeholder}}` left by the template copied above (project name, one-paragraph
+   overview naming the actual stack — see "Default project stack" below if it isn't
+   decided yet —, domain/DNS status, git-workflow tier, project status). The template's
+   own header comment has the full instructions, including the two symlinks it
+   requires (`CLAUDE.md` and `.github/copilot-instructions.md`) — follow them, then
+   delete that comment block once done.
 
 3. **Use the Orchestrator** for any complex task - it will route to the right resources.
    No setup action is needed beyond step 1: `.claude/settings.json` already sets

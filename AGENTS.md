@@ -63,6 +63,16 @@ The complete and up-to-date skills catalog is the single source of truth:
 | API Conventions | `rules/api-conventions.md` | REST API standards, versioning |
 | Security | `rules/security.md` | Prompt defense, secrets, input validation, supply chain |
 
+### Active Skills (this repo)
+
+Everything under `skills/` is a **reference catalog** other projects copy or
+link to (see "Shared AI Skills" above) — being cataloged here doesn't make a
+skill active in this repo's own sessions. One exception is wired live:
+
+| Skill | Path | Why it's active here |
+|-------|------|-----------------------|
+| Task Observer | `.claude/skills/task-observer/SKILL.md` (source of truth: `skills/process/task-observer/SKILL.md` — keep both in sync when editing, same as `.claude/agents`, `.claude/commands`, `.claude/rules`) | Watches this repo's own sessions for recurring patterns/corrections worth turning into a new or improved skill — fitting since this repo *is* the skill catalog. Per its own frontmatter, description-matching alone isn't reliable, so it's called out explicitly here: **run its Session Start Protocol at the start of any multi-step session in this repo.** `rules/security.md` overrides its permission-retry instruction — see the note under that skill's attribution block. |
+
 ## Standards
 
 ### Code Style
@@ -117,3 +127,4 @@ When working in this repository:
 5. Use conventional commit format for all commits
 6. Maintain English for all written artifacts without exception
 7. Do not add AI-attribution lines (Co-Authored-By, Generated with, session links, etc.) to commits or PRs
+8. At the start of any multi-step session in this repo, run the Task Observer skill's Session Start Protocol (`.claude/skills/task-observer/SKILL.md`) — see "Active Skills" above
