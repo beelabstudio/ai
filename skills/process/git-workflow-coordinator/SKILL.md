@@ -128,6 +128,74 @@ Every PR must include:
 - **Do not merge a PR with unresolved conversations**
 - If a requested change is out of scope → open a new ticket, don't expand the PR
 
+### Merge Safety — Enumerate Every CI Check Before Merging
+
+**Never infer "CI is green" from a subset of checks.** A single passing job (lint,
+typecheck) is not evidence the pipeline as a whole passed — verify the complete check
+list on the PR's head commit and require `SUCCESS` on every entry:
+
+```bash
+gh pr checks <PR> --watch   # or, explicitly:
+gh pr view <PR> --json statusCheckRollup \
+  --jq '.statusCheckRollup[] | {name, conclusion, state}'
+```
+
+Rules:
+- **Do not merge on "pending."** Wait for every check to reach a terminal state
+  (`SUCCESS`/`FAILURE`) — re-poll until it does.
+- **Treat any non-`SUCCESS` conclusion as a block** — `FAILURE`, an empty/null
+  conclusion, and `SKIPPED` all count as "do not merge," not "probably fine." A skipped
+  required job usually means an earlier required job failed.
+- **A hand-rolled parse of the check list that silently drops empty/pending conclusions
+  is itself a bug**, not a convenience — enumerate every entry, don't filter first and
+  assume the filter was safe.
+- This applies to every merge path: manual `gh pr merge`, an `--auto` merge on a
+  Dependabot PR, and any automated merge-bot workflow a project configures. If a project
+  has no GitHub branch protection (common on a private repo without GitHub Pro — required
+  status checks and required reviews are a Pro-only feature there), its own merge
+  automation is the *actual* gate, not a convenience layer on top of one — build it to
+  mirror this same check-enumeration logic, not just to watch a single workflow's
+  overall conclusion.
+
+*Why this is a hard rule, not a suggestion:* a real incident (UFlowApp, 2026-08-15) merged
+7 PRs while an E2E check was `FAILURE` (one still `pending` at merge time) because the
+merge decision was based on a partial read of the check list — green lint/typecheck
+looked like a green pipeline. It was not; two genuinely broken E2E specs shipped to
+`main`. This is exactly the class of mistake an autonomous merger (an agent profile with
+standing authorization to `gh pr merge` without per-PR human sign-off) can repeat silently
+at machine speed — check enumeration is the guardrail against it.
+
+### Orphaned-Commit Guard
+
+A branch can end up with commits that never reach `main`: a PR gets merged, then someone
+(human or agent) keeps pushing to the same branch without noticing the PR is already
+closed. Those commits sit on a dead branch, invisible in any PR, until someone happens to
+notice — which can be a long time.
+
+**Rule:** after every PR merge (or before adding a new commit to an existing branch),
+check whether the branch's PR is already merged/closed before pushing anything else to it:
+
+```bash
+# After a merge — check for orphaned commits on the branch you just left
+git log origin/main..HEAD --oneline
+# Non-empty output → open a new PR immediately, don't add more commits to the old branch.
+
+# Before adding a new commit to an existing branch — check its PR state first
+gh pr list --head "$(git branch --show-current)" --state all --json state --jq '.[0].state'
+# MERGED or CLOSED → do not push here; create a new branch instead.
+```
+
+Never push additional commits to a branch whose PR is already `MERGED` or `CLOSED`.
+
+**After every merge, delete the branch** (remote and local) — a stale branch is exactly
+what makes this mistake easy to make again:
+
+```bash
+git push origin --delete <branch>
+git checkout main && git pull origin main && git branch -d <branch>
+git fetch --prune origin
+```
+
 ### Merge strategy: Squash and Merge
 
 All PRs are squashed into a single commit on `main`. This keeps `main` history clean and readable.
@@ -223,6 +291,26 @@ git switch -c hotfix/brief-description
 Hotfixes skip the staging queue but **never** skip CI or code review.
 
 ---
+
+## Discovered-but-Unfixed Issues Get Their Own GitHub Issue — Always
+
+If you find a bug, flake, gap, or risk while working on something else — fixing a
+different bug, reviewing a PR, validating a fix — and you are not fixing it in the same
+change: **open a new GitHub issue for it immediately.** Apply the priority labels above.
+
+Do not just leave a comment on the issue/PR you're currently working on, and never rely
+on a closed issue's comment thread as the record. A comment on an already-closed issue is
+effectively invisible — nobody watches for new activity there, it doesn't show up in
+`gh issue list --state open`, and it will never surface again until someone happens to
+re-read that exact thread. That is not tracking, it's writing to a black hole.
+
+This applies even to small, low-priority findings — a `P3` costs nothing to file and
+gives the next person (human or agent) a starting point instead of nothing. If fixing or
+validating something reveals a *second*, differently-rooted problem, that's a new issue
+too — do not silently expand scope to fix it in the same change, and do not bury it in a
+comment on the original issue either.
+
+Rule of thumb: **if it's worth mentioning, it's worth a `gh issue create`.**
 
 ## Release Tagging
 
