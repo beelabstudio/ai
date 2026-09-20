@@ -59,18 +59,23 @@ skills/
 ├── process/                        # Workflow and process skills
 ├── security/                       # Security review & auditing
 └── tools/                          # Internet access & browser automation
-contexts/                           # Reusable working modes
-├── dev.md                          # Active development mode
-├── research.md                     # Exploration mode
-└── review.md                       # Code review mode
+contexts/                           # Reusable working modes — reference only, not
+├── dev.md                          # auto-loaded by Claude Code; the Orchestrator
+├── research.md                     # reads the matching file when a request calls
+└── review.md                       # for a mode switch (see agents/orchestrator.md)
 SOUL.md                             # Core identity and principles
 CLAUDE.md                           # Team instructions for Claude
 CLAUDE.local.md                     # Personal overrides (gitignored)
 ```
 
-> **Symlinks:** the canonical `agents/`, `commands/`, `rules/`, and `skills/` content lives
-> at the top level. `.claude/` contains `settings.json` plus symlinks back to those folders
-> so Claude Code discovers them from its native `.claude/` paths.
+> **Symlinks:** the canonical `agents/`, `commands/`, and `rules/` content lives at the
+> top level; every file under `.claude/agents/`, `.claude/commands/`, and
+> `.claude/rules/` is a per-file symlink back to it, so editing the top-level file is
+> enough — Claude Code discovers them from its native `.claude/` paths and there's
+> nothing to keep in sync. `skills/` is different: it's a reference catalog, not
+> mirrored into `.claude/` wholesale — only [Task Observer](skills/process/task-observer/SKILL.md)
+> is individually symlinked into `.claude/skills/`, for the reason explained in
+> "Activating Task Observer in another project" below.
 
 ## 📋 Pull Request Template
 
@@ -111,20 +116,95 @@ New projects should start from the AGENTS.md template in the
 `beelabstudio-brain` second brain
 (`99-meta/templates/AGENTS.md`), not from a blank file — it bakes in the
 infra/git/language conventions so a fresh session doesn't have to
-rediscover them. This repo includes the full reusable structure
-(`agents/`, `commands/`, `rules/`, plus `.claude/settings.json`) for
-reference:
+rediscover them. This repo is "the shared brain that every project's
+`AGENTS.md` points to" (see `SOUL.md`) — **point at it, don't copy it.**
+Claude Code only auto-discovers subagents, commands, and rules from inside
+a project's own `.claude/` folder (`.claude/agents/`, `.claude/commands/`,
+`.claude/rules/`) — a plain top-level `agents/`, `commands/`, or `rules/`
+folder is invisible to it, no matter what's inside. Symlinking `.claude/`
+straight at this repo's copies means every consuming project always runs
+the current org standard, with nothing to keep in sync by hand:
 
-1. **Copy the structure** to your project:
+1. **Wire this repo into your project's `.claude/`:**
    ```bash
-   cp -r ~/repos/ai/agents ~/repos/ai/commands ~/repos/ai/rules ./
-   mkdir -p .claude && cp ~/repos/ai/.claude/settings.json .claude/
-   cp ~/repos/ai/AGENTS.md ./  # then adapt via the brain template above
+   mkdir -p .claude
+   ln -s ~/repos/ai/agents .claude/agents
+   ln -s ~/repos/ai/commands .claude/commands
+   ln -s ~/repos/ai/rules .claude/rules
+   ln -s ~/repos/ai/contexts ./contexts   # top-level, not .claude/ — see "Contexts" note below
+   cp ~/repos/ai/.claude/settings.json .claude/settings.json
+   cp "~/repos/beelabstudio-brain/Bee Lab Studio - Brain/99-meta/templates/AGENTS.md" ./AGENTS.md
    ```
+   `settings.json` and `AGENTS.md` are **copied**, not symlinked, because
+   they're meant to be adapted per project (permissions, model, project
+   description) — `agents/`, `commands/`, `rules/`, and `contexts/` are
+   **symlinked**, because they're meant to always match this repo exactly.
+   If a project genuinely needs to override one specific agent, command, or
+   rule, replace just that symlinked entry with a real local file — don't
+   turn the whole folder into a copy to do it.
 
-2. **Customize** `AGENTS.md` with your project description
+   `contexts/` needs its own top-level symlink (not `.claude/contexts/`):
+   Claude Code has no native discovery for it at all (see "Contexts" in
+   `AGENTS.md`) — `agents/orchestrator.md`'s routing table reads it as a
+   plain relative path, `contexts/dev.md`, resolved against your project's
+   working directory, not against `.claude/`.
 
-3. **Use the Orchestrator** for any complex task - it will route to the right resources
+2. **Customize** `AGENTS.md` with your project description — fill in every
+   `{{placeholder}}` left by the template copied above (project name, one-paragraph
+   overview naming the actual stack — see "Default project stack" below if it isn't
+   decided yet —, domain/DNS status, git-workflow tier, project status). The template's
+   own header comment has the full instructions, including the two symlinks it
+   requires (`CLAUDE.md` and `.github/copilot-instructions.md`) — follow them, then
+   delete that comment block once done.
+
+3. **Use the Orchestrator** for any complex task - it will route to the right resources.
+   No setup action is needed beyond step 1: `.claude/settings.json` already sets
+   `"agent": "orchestrator"` as the default (a real, documented setting —
+   see [settings reference](https://code.claude.com/docs/en/settings-reference.md)),
+   so once `.claude/agents/orchestrator.md` resolves through the symlink above,
+   any Claude Code session there opens with the Orchestrator active and
+   routes multi-step requests to the right skill, agent, or command on its own.
+
+4. **Restart the Claude Code session** after step 1 — subagents, commands,
+   and rules are only picked up at session start, not mid-session.
+
+### Activating Task Observer in another project
+
+Unlike `agents/`, `commands/`, and `rules/`, **skills are not wired into
+`.claude/` by default** — `skills/` is a much larger reference catalog
+(60+ skills), and loading all of it into every project's context would be
+wasteful. Being cataloged there doesn't make a skill active anywhere; it's
+opt-in per skill. One skill in this catalog,
+[Task Observer](skills/process/task-observer/SKILL.md) (vendored from
+[rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all),
+CC BY 4.0), watches work sessions for recurring patterns and corrections
+worth turning into new or improved skills. It's wired live in this repo's
+own `.claude/skills/task-observer` (a symlink to the source under
+`skills/process/`, kept in sync automatically) — that only makes it active
+for sessions working *on this `ai` repo itself*, not anywhere else. To
+activate it in another project too:
+
+1. Symlink it in — do not copy the files, so the project always tracks the
+   latest version in `~/repos/ai`:
+   ```bash
+   mkdir -p .claude/skills
+   ln -s ~/repos/ai/skills/process/task-observer .claude/skills/task-observer
+   ```
+2. Reference it explicitly in that project's own `AGENTS.md` — its
+   frontmatter states that description-matching alone isn't a reliable
+   trigger. If `AGENTS.md` already has a "Shared skills" table (from the
+   `beelabstudio-brain` template), add a row pointing at
+   `.claude/skills/task-observer/SKILL.md`; otherwise add a short section
+   saying its Session Start Protocol should run at the start of any
+   multi-step session.
+3. Restart the Claude Code session in that project — new skills are only
+   picked up at session start.
+
+`rules/security.md` (this repo's and, if linked per step 1 above, the
+target project's) takes precedence over the skill's own instruction to
+retry a denied or failed tool call through an alternate interface — that
+override is already written inline in the vendored `SKILL.md`, right under
+its attribution block, so nothing else needs to be added for it.
 
 ### Setup
 
@@ -141,9 +221,24 @@ Then reference skills from your project's AI configuration:
 ~/repos/ai/skills/<category>/<skill-name>/SKILL.md
 ```
 
-**For Claude Code** (copy and adapt `agents/`, `commands/`, `rules/`, and `.claude/settings.json`)
+**For Claude Code**: symlink `.claude/agents`, `.claude/commands`, and `.claude/rules`
+to this repo's copies, and top-level `contexts` too — see "Claude Code" above for the
+full command and why a copy doesn't work the way a symlink does.
 
 ## 🏗️ Default project stack
+
+If a project's own `AGENTS.md` doesn't specify a stack, **don't default to the list
+below silently.** Invoke the [`software-architect`](skills/foundation/software-architect/SKILL.md)
+skill (or [`cto`](skills/c-level/cto/SKILL.md), which routes to it for stack decisions —
+see its "Skills to Activate" table) to ask about the project's actual requirements —
+expected scale, team size, whether it needs a backend/database, hosting target,
+content model — and propose the best-fit stack from that. Record the decision as an
+ADR (`docs/adr/`, per `software-architect`'s ADR format) so the choice and its
+trade-offs are on record, not just assumed.
+
+The list below is the **fallback for the simplest recurring case** this org actually
+builds — a static institutional or marketing site with no dynamic backend needs — not
+a default to reach for before that conversation happens:
 
 - HTML5 + CSS3 + Vanilla JavaScript (ES6+)
 - GitHub Actions for CI/CD

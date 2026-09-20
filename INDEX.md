@@ -105,6 +105,7 @@ Complete reference of all AI skills and resources available in this repository.
 | Git Workflow | `skills/process/git-workflow-coordinator/SKILL.md` | Git/GitHub workflow |
 | Project Orchestrator | `skills/process/project-orchestrator/SKILL.md` | Project coordination |
 | Skill Coordinator | `skills/process/skill-coordinator/SKILL.md` | AI skill management |
+| Task Observer | `skills/process/task-observer/SKILL.md` | Meta-skill that watches work sessions and turns recurring patterns/corrections into new or improved skills — vendored from [rebelytics/one-skill-to-rule-them-all](https://github.com/rebelytics/one-skill-to-rule-them-all) (CC BY 4.0, Eoghan Henn), with a local override of its permission-retry instruction per `rules/security.md` |
 
 ### Security Skills
 

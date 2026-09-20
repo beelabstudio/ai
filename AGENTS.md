@@ -1,4 +1,4 @@
-# BEELABSTUDIO — AI Agent Instructions
+# Bee Lab Studio — AI Agent Instructions
 
 > **Global Rule — Language**: All documentation, comments, commit messages, README files,
 > PR descriptions, and any other written artifact must be in English — regardless of the
@@ -15,7 +15,7 @@
 
 ## Project Context
 
-This is the central repository for BEELABSTUDIO organisation standards, containing:
+This is the central repository for Bee Lab Studio organisation standards, containing:
 
 - **Shared AI skills** (`skills/`) — reusable skill definitions for any AI assistant
 - **Agents** (`agents/`) — orchestrator and specialized reviewers
@@ -62,6 +62,45 @@ The complete and up-to-date skills catalog is the single source of truth:
 | Testing | `rules/testing.md` | Test structure, coverage requirements |
 | API Conventions | `rules/api-conventions.md` | REST API standards, versioning |
 | Security | `rules/security.md` | Prompt defense, secrets, input validation, supply chain |
+
+### Active Skills (this repo)
+
+Everything under `skills/` is a **reference catalog** other projects copy or
+link to (see "Shared AI Skills" above) — being cataloged here doesn't make a
+skill active in this repo's own sessions. One exception is wired live, purely
+for sessions that work *on this repo itself* (adding skills, editing rules,
+etc. — this conversation is one). **This is independent of, and doesn't
+substitute for, activating the skill inside a consuming project** (e.g.
+`beecreatorstudio`) — that's a separate `.claude/skills/task-observer/`
+created *inside that other project's own repo*, per "Activating Task Observer
+in another project" in `README.md`. Each project that wants the capability
+needs its own copy of this setup; this row only covers `ai` itself:
+
+| Skill | Path | Why it's active here |
+|-------|------|-----------------------|
+| Task Observer | `.claude/skills/task-observer/` is a symlink to `skills/process/task-observer/` — edit the latter only, the link stays in sync automatically | Watches this repo's own sessions for recurring patterns/corrections worth turning into a new or improved skill — fitting since this repo *is* the skill catalog. Per its own frontmatter, description-matching alone isn't reliable, so it's called out explicitly here: **run its Session Start Protocol at the start of any multi-step session in this repo.** `rules/security.md` overrides its permission-retry instruction — see the note under that skill's attribution block. |
+
+### Contexts (reference — not auto-loaded)
+
+`contexts/` holds working-mode prose (`dev.md`, `research.md`, `review.md`) but
+Claude Code has no native mechanism that switches into one automatically —
+listing them in this repo doesn't activate anything by itself. The
+Orchestrator (`agents/orchestrator.md`) is the one place that actually knows
+to load a matching file when a request calls for a mode switch; if you add a
+new context file, add a row to its routing table too, or it stays unreachable.
+
+### A note on `.claude/settings.json` hooks
+
+Its `hooks.PreToolUse` entry gates `git commit` on `npm run lint && npm run
+typecheck` when the target project has a `package.json` (a no-op otherwise,
+which is why this repo — a docs/skills catalog with no `package.json` — never
+triggers it). An earlier version of this file used a `"pre-commit"` key,
+which is **not a real Claude Code hook event** and was silently ignored —
+the lint/typecheck gate it claimed to run never actually ran. If you add
+hooks here, use one of Claude Code's real event names
+(`PreToolUse`, `PostToolUse`, `Stop`, `SessionStart`, etc. — see
+[hooks docs](https://code.claude.com/docs/en/hooks.md)) and verify the
+matcher actually fires before trusting it as a gate.
 
 ## Standards
 
@@ -117,3 +156,4 @@ When working in this repository:
 5. Use conventional commit format for all commits
 6. Maintain English for all written artifacts without exception
 7. Do not add AI-attribution lines (Co-Authored-By, Generated with, session links, etc.) to commits or PRs
+8. At the start of any multi-step session in this repo, run the Task Observer skill's Session Start Protocol (`.claude/skills/task-observer/SKILL.md`) — see "Active Skills" above

@@ -36,6 +36,7 @@ answering from general knowledge. Project-specific skills (in the project's own
 | "Is this secure?" / security-sensitive changes | Invoke `security-auditor` agent |
 | "Deploy" / "Release" | Run `deploy` command workflow |
 | "Fix issue #123" | Run `fix-issue` command workflow |
+| User asks to switch working mode ("dev mode", "research mode", "review mode") or the task's nature clearly implies one | Load the matching `contexts/*.md` and adopt its behavior/priorities for the rest of the session |
 | Anything domain-specific not above | Check `INDEX.md` before falling back to general practice |
 
 ## Resources
@@ -54,6 +55,15 @@ answering from general knowledge. Project-specific skills (in the project's own
 - `rules/testing.md` — testing requirements
 - `rules/api-conventions.md` — API standards
 - `rules/security.md` — prompt defense, secrets, input validation
+
+### Contexts (reference — load explicitly, not auto-applied)
+- `contexts/dev.md` — active development mode (ship working code first)
+- `contexts/research.md` — exploration mode
+- `contexts/review.md` — code review mode
+
+Claude Code has no native mechanism that auto-loads `contexts/`; nothing switches
+modes on its own. The Orchestrator is the thing responsible for reading the
+matching file and adopting its behavior when a request calls for it.
 
 ## Auto-Invocation Triggers
 

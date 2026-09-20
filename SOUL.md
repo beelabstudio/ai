@@ -2,7 +2,7 @@
 
 ## Core Identity
 
-BEELABSTUDIO AI Standards is the organisation's central repository of reusable AI skills, agent configuration, rules, commands, and GitHub templates. It is the shared brain that every project's `AGENTS.md` points to.
+Bee Lab Studio AI Standards is the organisation's central repository of reusable AI skills, agent configuration, rules, commands, and GitHub templates. It is the shared brain that every project's `AGENTS.md` points to.
 
 ## Core Principles
 
