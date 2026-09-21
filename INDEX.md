@@ -120,6 +120,7 @@ Complete reference of all AI skills and resources available in this repository.
 |-------|------|-------------|
 | Agent Reach | `skills/tools/agent-reach/SKILL.md` | Multi-platform internet access — search/read/interact with Twitter/X, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu, Douyin, WeChat, LinkedIn, RSS, Exa web search |
 | Figma MCP | `skills/tools/figma-mcp/SKILL.md` | Set up and use Figma's official MCP server to pull real components/variables/tokens into code instead of guessing from a screenshot |
+| Google Maps Scraper | `skills/tools/google-maps-scraper/SKILL.md` | Drive a local Dockerized Google Maps scraper (REST API) to turn a business-type + location into a clean lead list (name, phone, email, website, rating, reviews) — includes docker-compose, scripts, slash commands and setup guidance (vendored from [Mahanaicoach/google-maps-scraper-kit](https://github.com/Mahanaicoach/google-maps-scraper-kit), itself wrapping [gosom/google-maps-scraper](https://github.com/gosom/google-maps-scraper)) |
 | Playwright CLI | `skills/tools/playwright-cli/SKILL.md` | Browser automation and testing via the official Playwright CLI (Microsoft) — the default for routine coding-agent automation |
 | Playwright MCP | `skills/tools/playwright-mcp/SKILL.md` | Playwright's MCP server for stateful/exploratory browser sessions — primarily visual design review (screenshot + audit against frontend-taste/web-interface-guidelines) |
 

@@ -58,7 +58,7 @@ skills/
 ├── marketing/                      # SEO & growth skills
 ├── process/                        # Workflow and process skills
 ├── security/                       # Security review & auditing
-└── tools/                          # Internet access & browser automation
+└── tools/                          # Internet access, browser automation & local scraping infra
 contexts/                           # Reusable working modes — reference only, not
 ├── dev.md                          # auto-loaded by Claude Code; the Orchestrator
 ├── research.md                     # reads the matching file when a request calls
@@ -102,7 +102,7 @@ The `skills/` directory contains reusable AI skill definitions (`SKILL.md` files
 | `marketing/` | Marketing and growth (SEO) |
 | `process/` | Workflow and process skills (git, business analysis, fiscal…) |
 | `security/` | Security review and configuration auditing |
-| `tools/` | External-access tooling (internet access, browser automation) |
+| `tools/` | External-access tooling (internet access, browser automation, local scraping infra) |
 
 ## 🤖 Using with AI Assistants
 
@@ -205,6 +205,20 @@ target project's) takes precedence over the skill's own instruction to
 retry a denied or failed tool call through an alternate interface — that
 override is already written inline in the vendored `SKILL.md`, right under
 its attribution block, so nothing else needs to be added for it.
+
+### Activating Google Maps Scraper in another project
+
+[Google Maps Scraper](skills/tools/google-maps-scraper/SKILL.md) (vendored
+from
+[Mahanaicoach/google-maps-scraper-kit](https://github.com/Mahanaicoach/google-maps-scraper-kit),
+MIT) follows the same symlink-in pattern as Task Observer above, but needs
+one extra step because it drives a **local Docker container**, not just
+instructions: after symlinking the skill into `.claude/skills/`, copy (not
+symlink) its `docker-compose.yml` and `.env.example` into the project root
+so `docker compose up -d` has a real file to read, and optionally copy its
+four slash commands and merge its permission allowlist. The full sequence
+— with the reasoning for copy-vs-symlink — is in that skill's own
+"Activating it in a project" section, right after its attribution block.
 
 ### Setup
 
