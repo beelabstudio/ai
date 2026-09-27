@@ -123,3 +123,12 @@ Before finalising any privacy document, verify:
 - [ ] Effective date and version present
 - [ ] Bilingual (PT + EN) or at minimum Portuguese
 - [ ] Linked from website footer
+
+---
+
+## Relationship to other skills
+
+- [`google-maps-scraper`](../../tools/google-maps-scraper/SKILL.md) — produces lists of scraped
+  business emails/phones (personal data). When a user wants to store, email, or call those leads,
+  that skill hands off here for lawful-basis, consent, retention, and outreach (CAN-SPAM/GDPR/CCPA)
+  guidance rather than improvising it inline.

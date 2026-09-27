@@ -1,0 +1,33 @@
+# Runs the open-source Google Maps scraper (gosom/google-maps-scraper) locally.
+# Web/API mode on http://localhost:8080. The image has NO built-in auth, so we bind
+# to 127.0.0.1 ONLY — that localhost binding is the security boundary. Do not change
+# the port mapping to 0.0.0.0 / a public interface without putting an auth proxy in front.
+
+services:
+  google-maps-scraper:
+    # Pinned to a known-good release for reproducibility (bump deliberately — see below).
+    #
+    # BLS note (found by running a real scrape through this exact pin, 2026-09-21): the upstream
+    # kit pins v1.15.0, but that tag's Playwright dependency downloads its browser driver from
+    # Azure CDN mirrors (playwright[-akamai/-verizon].azureedge.net) that now return 404 for every
+    # driver version we tried — confirmed from the host too, so it's not this-machine-specific.
+    # v1.15.0 still WORKS for `fast_mode:true` (no browser needed), but `fast_mode:false` — this
+    # skill's own recommended default — hangs at "working" forever and never reaches "failed".
+    # v1.18.1 (latest at time of testing) fixed it: browser driver downloads cleanly, and it also
+    # publishes a native linux/arm64 manifest (no Apple Silicon emulation needed — confirmed via
+    # `docker manifest inspect`). Re-verify before bumping further: pull the target tag, POST a
+    # job with `fast_mode:false`, and confirm `docker logs` shows "Downloaded browsers
+    # successfully" rather than a driver-install 404.
+    image: gosom/google-maps-scraper:v1.18.1
+    container_name: gmaps-scraper
+    restart: unless-stopped
+    command: ["-web", "-data-folder", "/gmapsdata"]
+    ports:
+      - "127.0.0.1:8080:8080"   # localhost only — see warning above
+    volumes:
+      - gmaps_data:/gmapsdata    # job results persist here
+      - gmaps_cache:/opt         # Playwright browser cache (faster restarts)
+
+volumes:
+  gmaps_data:
+  gmaps_cache:

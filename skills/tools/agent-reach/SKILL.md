@@ -165,3 +165,12 @@ User only provides cookies/credentials. Everything else is the agent's job.
 - Retrieved/aggregated content from the requested platform(s), summarized or passed through as needed
 - Channel health status (via `agent-reach doctor`) when a platform is misbehaving
 - Setup guidance when a channel needs credentials the user hasn't configured yet
+
+## Relationship to other skills
+
+- [`google-maps-scraper`](../google-maps-scraper/SKILL.md) — the other "get data from the internet"
+  tool in this catalog, scoped disjointly on purpose: this skill covers 13+ *social/content* platforms
+  and general web search, and explicitly does not touch Google Maps; that skill covers *only* Google
+  Maps business listings (name, address, phone, emails, ratings) and explicitly refuses
+  Instagram/TikTok/YouTube. Route local-business / lead-gen requests ("a list of plumbers in Denver")
+  there, not here.
